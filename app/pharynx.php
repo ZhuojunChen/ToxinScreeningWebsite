@@ -49,17 +49,12 @@
 
 
 <?php 
-$chemicalErr = $runErr = $worm_typeErr = $dayErr = $dateErr = "";
-$chemical = $run = $worm_type = $day = $date = "";
+//initialize input variables
+$chemErr = $runErr = $worm_typeErr = $dayErr = $dateErr = "";
+$chem = $run = $worm_type = $day = $date = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   $chemical = test_input($_POST["chemical"]);
-   $run = test_input($_POST["run"]);
-   $worm_type = test_input($_POST["worm_type"]);
-   $day = test_input($_POST["day"]);
-   $date = test_input($_POST["date"]);
-
 
 function test_input($data) {
    $data = trim($data);
@@ -68,10 +63,11 @@ function test_input($data) {
    return $data;
 }
 
+  //Get input data
   if (empty($_POST["chemical"])) {
-    $chemicalErr = "Chemical is required";
+    $chemErr = "Chemical is required";
   } else {
-    $chemical = test_input($_POST["chemical"]);
+    $chem = test_input($_POST["chemical"]);
   }
 
   if (empty($_POST["run"])) {
@@ -98,32 +94,53 @@ function test_input($data) {
     $date = test_input($_POST["date"]);
   }
 
-  $query = 'SELECT id FROM plate 
-  WHERE chemical = $chemical A
-  AND run = $run
-  AND worm_type = $worm_type
-  AND day = $day
-  AND date = $date';
+  echo $chem, PHP_EOL, $run, PHP_EOL, $worm_type, PHP_EOL, 
+  		$day, PHP_EOL, $date;
 
 
-  $result = mysqli_query($con, $query);
+  //Get id of the plate
+  $query = "SELECT * FROM plate
+  WHERE chemical = '$chem'
+  AND run = '$run'
+  AND worm_type = '$worm_type'
+  AND day = '$day'";
 
+  $select_id = mysqli_query($con, $query);
+  echo "rows: " . mysqli_num_rows($select_id);
 
-  if($result->num_rows == 1){
-  	$row = mysql_fetch_assoc($result);
+  if(mysqli_num_rows($select_id) >= 1){
+  	//If the id exists, update the row
+  	$row = mysqli_fetch_assoc($select_id);
+  	$row_id = $row["id"];
+
+  	$query = "UPDATE plate 
+  	SET chemical='$chem', run='$run', worm_type='$worm_type', day='$day', date='$date'
+  	WHERE id='$row_id'";
+
+  	if (mysqli_query($con, $query)) {
+  		echo "Updated plate successfully";
+  	} else {
+  		echo "Error updating plate: " . mysqli_error($con);
+  	}
+
   	echo "id: " . $row["id"];
+  	echo PHP_EOL;
   }
 
+  else{
+  	//Otherwise, make a new row
+  	$plate_insert = "INSERT INTO plate (chemical, run, worm_type, day, date)
+  	VALUES ('$chem', '$run', '$worm_type', '$day', '$date' )";
+
+  	mysqli_real_escape_string($con, $plate_insert);
 
 
-  $plate_info = "INSERT INTO plate (chemical, run, worm_type, day, date)
-  VALUES ($chemical, $run, $worm_type, $day, $date )";
-
-
-  if (mysqli_query($con, $plate_info) === TRUE) {
-  	echo "Plate information recorded successfully";
-  } else {
-  	echo "Error: ". $plate_info . "<br>" . $con->error;
+  	if (mysqli_query($con, $plate_insert)) {
+  		echo "Plate information recorded successfully";
+  	} else {
+  		echo "Error: Must enter plate information";
+  		echo mysqli_error($con);
+  	}
   }
 }
 ?> 
@@ -133,8 +150,8 @@ function test_input($data) {
       	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       		<div class="form-group">
       			<label for="chemical">Chemical Name</label>
-      			<span class="error">* <?php echo $chemicalErr;?></span>
-      			<input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">
+      			<span class="error">* <?php echo $chemErr;?></span>
+      			<input type="text" class="form-control" name="chemical" placeholder="Enter chemical name">
       		</div>
 
       		<label for="run">Run</label> 
@@ -160,13 +177,13 @@ function test_input($data) {
       		<div class="form-group">
       			<label for="day">Day Number</label>
       			<span class="error">* <?php echo $dayErr;?></span>
-      			<input type="number" class="form-control" id="day" placeholder="example: 7">
+      			<input type="number" class="form-control" name="day" placeholder="example: 7">
       		</div>
 
       		<div class="form-group">
       			<label for="date">Date</label>
       			<span class="error">* <?php echo $dateErr;?></span>
-      			<input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
+      			<input type="date" class="form-control" name="date" placeholder="MM/DD/YYYY">
       		</div>
 
 
