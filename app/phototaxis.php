@@ -34,16 +34,16 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/livingstatus.html">Living Status</a></li>
-          <li><a href="/pharynx.html">Pharynx</a></li>
-          <li><a href="/phototaxis.html">Phototaxis</a></li>
-          <li><a href="/thermotaxis.html">Thermotaxis</a></li>
-          <li><a href="/IOL.html">IOL</a></li>
-          <li><a href="/curvature.html">Curvature</a></li>   
-          <li class="active"><a href="/eyes.html">Eyes</a></li>
-          <li><a href="/behavior.html">Behavior</a></li>
-          <li><a href="/imagepath.html">Image</a></li>
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/livingstatus.php">Living Status</a></li>
+          <li><a href="/pharynx.php">Pharynx</a></li>
+          <li class="active"><a href="/phototaxis.php">Phototaxis</a></li>
+          <li><a href="/thermotaxis.php">Thermotaxis</a></li>
+          <li><a href="/IOL.php">IOL</a></li>
+          <li><a href="/curvature.php">Curvature</a></li>   
+          <li><a href="/eyes.php">Eyes</a></li>
+          <li><a href="/behavior.php">Behavior</a></li>
+          <li><a href="/imagepath.php">Image</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
@@ -51,7 +51,7 @@
 
  
 
-    <h1>Eyes</h1>
+    <h1>Phototaxis</h1>
 
 	<div class="form-group">
     <label for="">Chemical Name</label>
@@ -86,8 +86,10 @@
   <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
 </div>
 
-    <p>Please do something for eyes</p>
+    <p>Please upload the matlab file with the phototaxis information</p>
 
+   <!--The file upload button-->
+     <input id="phototaxis" type="file" class="file">
 
 
    <!--Specify allowed file types

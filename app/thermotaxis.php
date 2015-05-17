@@ -1,10 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="">
-  <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>toxin_screening</title>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -20,13 +19,13 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
      of text file preview via modal dialog -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>  
-    
-  </head>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+
+  
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -35,38 +34,77 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/index.html">Home</a></li>
-          <li><a href="/livingstatus.html">Living Status</a></li>
-          <li><a href="/pharynx.html">Pharynx</a></li>
-          <li><a href="/phototaxis.html">Phototaxis</a></li>
-          <li><a href="/thermotaxis.html">Thermotaxis</a></li>
-          <li><a href="/IOL.html">IOL</a></li>
-          <li><a href="/curvature.html">Curvature</a></li>   
-          <li><a href="/eyes.html">Eyes</a></li>
-          <li><a href="/behavior.html">Behavior</a></li>
-          <li><a href="/imagepath.html">Image</a></li>
-          <li><a href="/test.html">Test</a></li>
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/livingstatus.php">Living Status</a></li>
+          <li><a href="/pharynx.php">Pharynx</a></li>
+          <li><a href="/phototaxis.php">Phototaxis</a></li>
+          <li class="active"><a href="/thermotaxis.php">Thermotaxis</a></li>
+          <li><a href="/IOL.php">IOL</a></li>
+          <li><a href="/curvature.php">Curvature</a></li>   
+          <li><a href="/eyes.php">Eyes</a></li>
+          <li><a href="/behavior.php">Behavior</a></li>
+          <li><a href="/imagepath.php">Image</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
 
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="http://google.com">Splendid!</a></p>
-      </div>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-        <!-- insert text -->
+ 
 
+    <h1>Thermotaxis</h1>
+
+	<div class="form-group">
+    <label for="">Chemical Name</label>
+    <input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">
+  </div>
+
+ <form role="form">
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Run 1
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio">Run 2
+    </label>
+ </form>
+
+ <div class="form-group">
+  <label for="worm_type">Worm Type</label>
+  <select class="form-control" id="worm_type">
+    <option>Full</option>
+    <option>Head</option>
+    <option>Tail</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="day">Day Number</label>
+  <input type="number" class="form-control" id="day" placeholder="example: 7">
+</div>
+
+<div class="form-group">
+  <label for="date">Date</label>
+  <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
+</div>
+
+    <p>Please upload the matlab file with the thermotaxis information</p>
+
+   <!--The file upload button-->
+     <input id="thermotaxis" type="file" class="file">
+
+
+   <!--Specify allowed file types
+   <script>
+	$("#phototaxis").fileinput({
+    allowedFileExtensions: ["jpg"]
+	});
+   </script>-->
+
+  
+
+        <div class="container">
+        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
         </div>
-      </div>
 
-      <div class="footer">
-        <p>Footer</p>
-      </div>
-    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

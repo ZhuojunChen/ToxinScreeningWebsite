@@ -1,5 +1,19 @@
 <!doctype html>
 <html class="no-js" lang="">
+<head>
+
+<style>
+
+.selectpicker {
+    padding: 0px;
+    color: #FFFFFF;
+    font-size: 12px;
+    background: blue;
+    -webkit-appearance: none;
+
+}
+
+</style>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,20 +25,19 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css styles/ -->
+      <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="/styles/bootstrap-select.css">
+      <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
      of text file preview via modal dialog -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-
+</head>
   
   <body>
     <!--[if lt IE 10]>
@@ -34,16 +47,16 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="/index.html">Home</a></li>
-          <li class="active"><a href="/livingstatus.html">Living Status</a></li>
-          <li><a href="/pharynx.html">Pharynx</a></li>
-          <li><a href="/phototaxis.html">Phototaxis</a></li>
-          <li><a href="/thermotaxis.html">Thermotaxis</a></li>
-          <li><a href="/IOL.html">IOL</a></li>
-          <li><a href="/curvature.html">Curvature</a></li>   
-          <li><a href="/eyes.html">Eyes</a></li>
-          <li><a href="/behavior.html">Behavior</a></li>
-          <li><a href="/imagepath.html">Image</a></li>
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/livingstatus.php">Living Status</a></li>
+          <li><a href="/pharynx.php">Pharynx</a></li>
+          <li><a href="/phototaxis.php">Phototaxis</a></li>
+          <li><a href="/thermotaxis.php">Thermotaxis</a></li>
+          <li><a href="/IOL.php">IOL</a></li>
+          <li><a href="/curvature.php">Curvature</a></li>   
+          <li class="active"><a href="/eyes.php">Eyes</a></li>
+          <li><a href="/behavior.php">Behavior</a></li>
+          <li><a href="/imagepath.php">Image</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
@@ -51,7 +64,7 @@
 
  
 
-    <h1>Living Status</h1>
+    <h1>Eyes</h1>
 
 	<div class="form-group">
     <label for="">Chemical Name</label>
@@ -86,13 +99,84 @@
   <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
 </div>
 
-    <p>
-    Please upload the matlab file with the living status of the worms. 
-    This should be a matlab matrix with 1 denoting living, and 0 denoting not living 
-    </p>
+ <div class="row">
+ 
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
 
-   <!--The file upload button-->
-     <input id="livingstatus" type="file" class="file">
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<select class="selectpicker" data-style="btn-primary">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+</div>
+
+ <!--        <div class="panel panel-default">
+            <div class="panel-body">
+               <div class="btn-group">
+                 <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
+                   <span data-bind="label">Select One</span>&nbsp;<span class="caret"></span>
+                 </button>
+                 <ul class="dropdown-menu" role="menu">
+                   <li><a href="#">0</a></li>
+                   <li><a href="#">1</a></li>
+                   <li><a href="#">2</a></li>
+                 </ul>
+               </div>
+             </div>
+          </div>
+
+      </div>
+
+   </div> -->
+
 
 
    <!--Specify allowed file types
@@ -138,10 +222,20 @@
         <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
         <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
         <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+        <script type="text/javascript" src="app/styles/bootstrap-select.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('.selectpicker').selectpicker({
+              style: 'btn-info',
+              size: 4
+            });
+          });
+        </script>
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
+      <!--  <script src="scripts/main.js"></script> -->
         <!-- endbuild -->
 </body>
 </html>

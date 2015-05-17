@@ -34,16 +34,16 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/livingstatus.html">Living Status</a></li>
-          <li><a href="/pharynx.html">Pharynx</a></li>
-          <li><a href="/phototaxis.html">Phototaxis</a></li>
-          <li><a href="/thermotaxis.html">Thermotaxis</a></li>
-          <li class="active"><a href="/IOL.html">IOL</a></li>
-          <li><a href="/curvature.html">Curvature</a></li>   
-          <li><a href="/eyes.html">Eyes</a></li>
-          <li><a href="/behavior.html">Behavior</a></li>
-          <li><a href="/imagepath.html">Image</a></li>
+          <li><a href="/index.php">Home</a></li>
+          <li class="active"><a href="/livingstatus.php">Living Status</a></li>
+          <li><a href="/pharynx.php">Pharynx</a></li>
+          <li><a href="/phototaxis.php">Phototaxis</a></li>
+          <li><a href="/thermotaxis.php">Thermotaxis</a></li>
+          <li><a href="/IOL.php">IOL</a></li>
+          <li><a href="/curvature.php">Curvature</a></li>   
+          <li><a href="/eyes.php">Eyes</a></li>
+          <li><a href="/behavior.php">Behavior</a></li>
+          <li><a href="/imagepath.php">Image</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
@@ -51,7 +51,7 @@
 
  
 
-    <h1>IOL</h1>
+    <h1>Living Status</h1>
 
 	<div class="form-group">
     <label for="">Chemical Name</label>
@@ -86,10 +86,13 @@
   <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
 </div>
 
-    <p>Please upload the matlab file with the IOL information</p>
+    <p>
+    Please upload the matlab file with the living status of the worms. 
+    This should be a matlab matrix with 1 denoting living, and 0 denoting not living 
+    </p>
 
    <!--The file upload button-->
-     <input id="IOL" type="file" class="file">
+     <input id="livingstatus" type="file" class="file">
 
 
    <!--Specify allowed file types

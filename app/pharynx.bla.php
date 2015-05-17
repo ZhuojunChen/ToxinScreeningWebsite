@@ -18,11 +18,6 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	<!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
-    of text file preview via modal dialog -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>   
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -31,23 +26,23 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/livingstatus.html">Living Status</a></li>
-          <li class="active"><a href="/pharynx.html">Pharynx</a></li>
-          <li><a href="/phototaxis.html">Phototaxis</a></li>
-          <li><a href="/thermotaxis.html">Thermotaxis</a></li>
-          <li><a href="/IOL.html">IOL</a></li>
-          <li><a href="/curvature.html">Curvature</a></li>   
-          <li><a href="/eyes.html">Eyes</a></li>
-          <li><a href="/behavior.html">Behavior</a></li>
-          <li><a href="/imagepath.html">Image</a></li>
+          <li><a href="/index.php">Home</a></li>
+          <li><a href="/livingstatus.php">Living Status</a></li>
+          <li class="active"><a href="/pharynx.php">Pharynx</a></li>
+          <li><a href="/phototaxis.php">Phototaxis</a></li>
+          <li><a href="/thermotaxis.php">Thermotaxis</a></li>
+          <li><a href="/IOL.php">IOL</a></li>
+          <li><a href="/curvature.php">Curvature</a></li>   
+          <li><a href="/eyes.php">Eyes</a></li>
+          <li><a href="/behavior.php">Behavior</a></li>
+          <li><a href="/imagepath.php">Image</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
 
     <h1>Pharynx Extension</h1>
 
-<form role="form" method="post" action="toxin_screening/app/pharynx.php">
+<form role="form" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 	<div class="form-group">
 	    <label for="">Chemical Name</label>
 	    <input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">
@@ -79,6 +74,25 @@
 	  <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
 	</div>
 
+<?php
+// define variables and set to empty values
+$chemical = $optradio = $worm_type = $day = $date = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $chemical = test_input($_POST["chemical"]);
+  $optradio = test_input($_POST["optradio"]);
+  $worm_type = test_input($_POST["worm_type"]);
+  $day = test_input($_POST["day"]);
+  $date = test_input($_POST["date"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 
     <p>Click all worms that have a pharynx extension</p>
 
@@ -274,6 +288,19 @@
         	<p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
         </div>
         </form>
+
+<?php
+echo "<h2>Your Input:</h2>";
+echo $chemical;
+echo "<br>";
+echo $optradio;
+echo "<br>";
+echo $worm_type;
+echo "<br>";
+echo $day;
+echo "<br>";
+echo $date;
+?>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
