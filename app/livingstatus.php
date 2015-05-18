@@ -1,4 +1,5 @@
 <!doctype html>
+<?php require 'connection.php'; ?>
 <html class="no-js" lang="">
     <meta charset="utf-8">
     <meta name="description" content="">

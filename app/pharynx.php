@@ -195,28 +195,28 @@ function test_input($data) {
       			<div class="row">
       				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A1 
+      						<input type="checkbox" autocomplete="off" value='1'> A1 
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A2
+      						<input type="checkbox" autocomplete="off" value='1'> A2
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A3
+      						<input type="checkbox" autocomplete="off" value='1'> A3
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A4
+      						<input type="checkbox" autocomplete="off" value='1'> A4
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A5
+      						<input type="checkbox" autocomplete="off" value='1'> A5
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A6
+      						<input type="checkbox" autocomplete="off" value='1'> A6
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A7
+      						<input type="checkbox" autocomplete="off" value='1'> A7
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> A8
+      						<input type="checkbox" autocomplete="off" value='1'> A8
       					</label>
       				</div>
       			</div>

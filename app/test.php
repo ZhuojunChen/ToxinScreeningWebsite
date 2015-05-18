@@ -1,4 +1,5 @@
 <!DOCTYPE HTML> 
+<?php require 'connection.php'; ?>
 <html>
 <head>
 </head>
