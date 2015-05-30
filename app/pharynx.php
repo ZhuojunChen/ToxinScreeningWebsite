@@ -64,6 +64,7 @@ function test_input($data) {
 }
 
   //Get input data
+  //Data for plate
   if (empty($_POST["chemical"])) {
     $chemErr = "Chemical is required";
   } else {
@@ -88,19 +89,300 @@ function test_input($data) {
     $day = test_input($_POST["day"]);
   }
 
-/*
-  if (empty($_POST["date"])) {
-    $dateErr = "Date is required";
-  } else {
-    $date = test_input($_POST["date"]);
+  //Input for wells from checkboxes
+  //Row A
+  if (isset($_POST["A1"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
   }
-*/
 
-if (isset($_POST["A1"])){
-  $string .= "1";
-} else{
-  $string .= "0";
-}
+  if (isset($_POST["A2"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["A3"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["A4"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }  
+
+  if (isset($_POST["A5"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["A6"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["A7"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["A8"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  //Row B
+  if (isset($_POST["B1"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["B2"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["B3"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["B4"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }  
+
+  if (isset($_POST["B5"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["B6"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["B7"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["B8"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  //Row C
+  if (isset($_POST["C1"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["C2"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["C3"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["C4"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }  
+
+  if (isset($_POST["C5"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["C6"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["C7"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["C8"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  //Row D
+  if (isset($_POST["D1"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["D2"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["D3"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["D4"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }  
+
+  if (isset($_POST["D5"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["D6"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["D7"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["D8"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  //Row E
+  if (isset($_POST["E1"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["E2"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["E3"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["E4"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }  
+
+  if (isset($_POST["E5"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["E6"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["E7"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["E8"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  //Row F
+  if (isset($_POST["F1"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["F2"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["F3"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["F4"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }  
+
+  if (isset($_POST["F5"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["F6"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["F7"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
+
+  if (isset($_POST["F8"])){
+    $string .= "1";
+  } else{
+    $string .= "0";
+  }
 
   echo nl2br(" chemical: $chem 
     run: $run 
@@ -126,7 +408,7 @@ if (isset($_POST["A1"])){
   	$row_id = $row["id"];
 
   	$query = "UPDATE plate 
-  	SET chemical='$chem', run='$run', worm_type='$worm_type', day='$day'
+  	SET chemical='$chem', run='$run', worm_type='$worm_type', day='$day', pharynx='$string'
   	WHERE id='$row_id'";
 
   	if (mysqli_query($con, $query)) {
@@ -141,8 +423,8 @@ if (isset($_POST["A1"])){
 
   else{
   	//Otherwise, make a new row
-  	$plate_insert = "INSERT INTO plate (chemical, run, worm_type, day)
-  	VALUES ('$chem', '$run', '$worm_type', '$day')";
+  	$plate_insert = "INSERT INTO plate (chemical, run, worm_type, day, pharynx)
+  	VALUES ('$chem', '$run', '$worm_type', '$day', '$string')";
 
   	mysqli_real_escape_string($con, $plate_insert);
 
@@ -208,59 +490,28 @@ if (isset($_POST["A1"])){
       			<div class="row">
       				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A1 
+      						<input type="checkbox" name="A1" autocomplete="off" value='1'> A1 
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A2
+      						<input type="checkbox" name="A2" autocomplete="off" value='1'> A2
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A3
+      						<input type="checkbox" name="A3" autocomplete="off" value='1'> A3
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A4
+      						<input type="checkbox" name="A4" autocomplete="off" value='1'> A4
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A5
+      						<input type="checkbox" name="A5" autocomplete="off" value='1'> A5
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A6
+      						<input type="checkbox" name="A6" autocomplete="off" value='1'> A6
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A7
+      						<input type="checkbox" name="A7" autocomplete="off" value='1'> A7
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off" value='1'> A8
-      					</label>
-      				</div>
-      			</div>
-      		</div>
-
-      		<div class="container-fluid" align="center">
-      			<div class="row">
-      				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B1 
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B2
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B3
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B4
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B5
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B6
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B7
-      					</label>
-      					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> B8
+      						<input type="checkbox" name="A8" autocomplete="off" value='1'> A8
       					</label>
       				</div>
       			</div>
@@ -270,28 +521,59 @@ if (isset($_POST["A1"])){
       			<div class="row">
       				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C1 
+      						<input type="checkbox" name="B1" autocomplete="off"> B1 
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C2
+      						<input type="checkbox" name="B2" autocomplete="off"> B2
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C3
+      						<input type="checkbox" name="B3" autocomplete="off"> B3
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C4
+      						<input type="checkbox" name="B4" autocomplete="off"> B4
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C5
+      						<input type="checkbox" name="B5" autocomplete="off"> B5
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C6
+      						<input type="checkbox" name="B6" autocomplete="off"> B6
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C7
+      						<input type="checkbox" name="B7" autocomplete="off"> B7
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> C8
+      						<input type="checkbox" name="B8" autocomplete="off"> B8
+      					</label>
+      				</div>
+      			</div>
+      		</div>
+
+      		<div class="container-fluid" align="center">
+      			<div class="row">
+      				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C1" autocomplete="off"> C1 
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C2" autocomplete="off"> C2
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C3" autocomplete="off"> C3
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C4" autocomplete="off"> C4
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C5" autocomplete="off"> C5
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C6" autocomplete="off"> C6
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C7" autocomplete="off"> C7
+      					</label>
+      					<label class="btn btn-primary">
+      						<input type="checkbox" name="C8" autocomplete="off"> C8
       					</label>
       				</div>
       			</div>
@@ -301,28 +583,28 @@ if (isset($_POST["A1"])){
       			<div class="row">
       				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D1 
+      						<input type="checkbox" name="D1" autocomplete="off"> D1 
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D2
+      						<input type="checkbox" name="D2" autocomplete="off"> D2
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D3
+      						<input type="checkbox" name="D3" autocomplete="off"> D3
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D4
+      						<input type="checkbox" name="D4" autocomplete="off"> D4
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D5
+      						<input type="checkbox" name="D5" autocomplete="off"> D5
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D6
+      						<input type="checkbox" name="D6" autocomplete="off"> D6
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D7
+      						<input type="checkbox" name="D7" autocomplete="off"> D7
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> D8
+      						<input type="checkbox" name="D8" autocomplete="off"> D8
       					</label>
       				</div>
       			</div>    
@@ -332,28 +614,28 @@ if (isset($_POST["A1"])){
       			<div class="row">
       				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E1 
+      						<input type="checkbox" name="E1" autocomplete="off"> E1 
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E2
+      						<input type="checkbox" name="E2" autocomplete="off"> E2
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E3
+      						<input type="checkbox" name="E3" autocomplete="off"> E3
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E4
+      						<input type="checkbox" name="E4" autocomplete="off"> E4
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E5
+      						<input type="checkbox" name="E5" autocomplete="off"> E5
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E6
+      						<input type="checkbox" name="E6" autocomplete="off"> E6
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E7
+      						<input type="checkbox" name="E7" autocomplete="off"> E7
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> E8
+      						<input type="checkbox" name="E8" autocomplete="off"> E8
       					</label>
       				</div>
       			</div>
@@ -363,28 +645,28 @@ if (isset($_POST["A1"])){
       			<div class="row">
       				<div class="btn-group btn-group-justified" role="group" data-toggle="buttons">
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F1 
+      						<input type="checkbox" name="F1" autocomplete="off"> F1 
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F2
+      						<input type="checkbox" name="F2" autocomplete="off"> F2
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F3
+      						<input type="checkbox" name="F3" autocomplete="off"> F3
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F4
+      						<input type="checkbox" name="F4" autocomplete="off"> F4
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F5
+      						<input type="checkbox" name="F5" autocomplete="off"> F5
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F6
+      						<input type="checkbox" name="F6" autocomplete="off"> F6
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F7
+      						<input type="checkbox" name="F7" autocomplete="off"> F7
       					</label>
       					<label class="btn btn-primary">
-      						<input type="checkbox" autocomplete="off"> F8
+      						<input type="checkbox" name="F8" autocomplete="off"> F8
       					</label>
       				</div>
       			</div>
