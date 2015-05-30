@@ -51,7 +51,7 @@
 <?php 
 //initialize input variables
 $chemErr = $runErr = $worm_typeErr = $dayErr = $dateErr = "";
-$chem = $run = $worm_type = $day = $date = "";
+$chem = $run = $worm_type = $day = $string = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -88,14 +88,25 @@ function test_input($data) {
     $day = test_input($_POST["day"]);
   }
 
+/*
   if (empty($_POST["date"])) {
     $dateErr = "Date is required";
   } else {
     $date = test_input($_POST["date"]);
   }
+*/
 
-  echo $chem, PHP_EOL, $run, PHP_EOL, $worm_type, PHP_EOL, 
-  		$day, PHP_EOL, $date;
+if (isset($_POST["A1"])){
+  $string .= "1";
+} else{
+  $string .= "0";
+}
+
+  echo nl2br(" chemical: $chem 
+    run: $run 
+    worm type: $worm_type 
+    day: $day
+    string: $string \n"); 
 
 
   //Get id of the plate
@@ -106,7 +117,8 @@ function test_input($data) {
   AND day = '$day'";
 
   $select_id = mysqli_query($con, $query);
-  echo "rows: " . mysqli_num_rows($select_id);
+  echo "rows affected: " . mysqli_num_rows($select_id);
+  echo nl2br("\n");
 
   if(mysqli_num_rows($select_id) >= 1){
   	//If the id exists, update the row
@@ -114,11 +126,11 @@ function test_input($data) {
   	$row_id = $row["id"];
 
   	$query = "UPDATE plate 
-  	SET chemical='$chem', run='$run', worm_type='$worm_type', day='$day', date='$date'
+  	SET chemical='$chem', run='$run', worm_type='$worm_type', day='$day'
   	WHERE id='$row_id'";
 
   	if (mysqli_query($con, $query)) {
-  		echo "Updated plate successfully";
+  		echo nl2br("Updated plate successfully \n");
   	} else {
   		echo "Error updating plate: " . mysqli_error($con);
   	}
@@ -129,8 +141,8 @@ function test_input($data) {
 
   else{
   	//Otherwise, make a new row
-  	$plate_insert = "INSERT INTO plate (chemical, run, worm_type, day, date)
-  	VALUES ('$chem', '$run', '$worm_type', '$day', '$date' )";
+  	$plate_insert = "INSERT INTO plate (chemical, run, worm_type, day)
+  	VALUES ('$chem', '$run', '$worm_type', '$day')";
 
   	mysqli_real_escape_string($con, $plate_insert);
 
@@ -180,12 +192,13 @@ function test_input($data) {
       			<input type="number" class="form-control" name="day" placeholder="example: 7">
       		</div>
 
+<!--
       		<div class="form-group">
       			<label for="date">Date</label>
-      			<span class="error">* <?php echo $dateErr;?></span>
+      			<span class="error">* <?php //echo $dateErr;?></span>
       			<input type="date" class="form-control" name="date" placeholder="MM/DD/YYYY">
       		</div>
-
+-->
 
       		<p>Click all worms that have a pharynx extension</p>
 
