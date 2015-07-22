@@ -1,5 +1,6 @@
 <!doctype html>
 <?php require 'connection.php'; ?>
+<?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
 <html class="no-js" lang="">
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -53,7 +54,7 @@
  
 
     <h1>Thermotaxis</h1>
-
+<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<div class="form-group">
     <label for="">Chemical Name</label>
     <input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">

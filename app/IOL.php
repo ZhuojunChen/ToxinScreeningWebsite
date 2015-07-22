@@ -1,5 +1,6 @@
 <!doctype html>
 <?php require 'connection.php'; ?>
+<?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
 <html class="no-js" lang="">
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -50,23 +51,33 @@
       </div>
 
 
- 
+<?php 
+//initialize input
+//copy from pharynx
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+//Read from file
+$IOLfile = fopen("IOLfile", "r"); 
+echo fread($IOLfile, filesize("IOLfile"));
+fclose($IOLfile);
+}
+?> 
 
     <h1>IOL</h1>
-
+<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
+enctype="multipart/form-data">
 	<div class="form-group">
     <label for="">Chemical Name</label>
     <input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">
   </div>
 
- <form role="form">
     <label class="radio-inline">
       <input type="radio" name="optradio">Run 1
     </label>
     <label class="radio-inline">
       <input type="radio" name="optradio">Run 2
     </label>
- </form>
+
 
  <div class="form-group">
   <label for="worm_type">Worm Type</label>
@@ -90,8 +101,7 @@
     <p>Please upload the matlab file with the IOL information</p>
 
    <!--The file upload button-->
-     <input id="IOL" type="file" class="file">
-
+     <input type="file" name ="IOLfile" class="file">
 
    <!--Specify allowed file types
    <script>
@@ -102,10 +112,10 @@
 
   
 
-        <div class="container">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
-        </div>
-
+          <div class="container" align="center">
+            <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
+          </div>
+</form>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

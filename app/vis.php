@@ -1,6 +1,5 @@
 <!doctype html>
 <?php require 'connection.php'; ?>
-<?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
 <html class="no-js" lang="">
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -37,15 +36,15 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
-          <li class="active"><a href="/livingstatus.php">Living Status</a></li>
-          <li><a href="/pharynx.php">Pharynx</a></li>
-          <li><a href="/phototaxis.php">Phototaxis</a></li>
-          <li><a href="/thermotaxis.php">Thermotaxis</a></li>
-          <li><a href="/IOL.php">IOL</a></li>
-          <li><a href="/curvature.php">Curvature</a></li>   
-          <li><a href="/eyes.php">Eyes</a></li>
-          <li><a href="/behavior.php">Behavior</a></li>
-          <li><a href="/imagepath.php">Image</a></li>
+          <li><a href="">Living Status Visualization</a></li>
+          <li><a href="">Pharynx Visualization</a></li>
+          <li><a href="">Phototaxis Visualization</a></li>
+          <li><a href="">Thermotaxis Visualization</a></li>
+          <li><a href="">IOL Visualization</a></li>
+          <li><a href="">Curvature Visualization</a></li>   
+          <li><a href="">Eyes Visualization</a></li>
+          <li><a href="">Behavior Visualization</a></li>
+          <li><a href="">Image Visualization</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
@@ -53,7 +52,7 @@
 
  
 
-    <h1>Living Status</h1>
+    <h1>Image</h1>
 
 	<div class="form-group">
     <label for="">Chemical Name</label>
@@ -88,13 +87,10 @@
   <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
 </div>
 
-    <p>
-    Please upload the matlab file with the living status of the worms. 
-    This should be a matlab matrix with 1 denoting living, and 0 denoting not living 
-    </p>
+    <p>Please upload images for each worm...</p>
 
-   <!--The file upload button-->
-     <input id="livingstatus" type="file" class="file">
+   <!--The file upload button
+     <input id="thermotaxis" type="file" class="file"> -->
 
 
    <!--Specify allowed file types

@@ -1,5 +1,6 @@
 <!doctype html>
 <?php require 'connection.php'; ?>
+<?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
 <html class="no-js" lang="">
     <meta charset="utf-8">
     <meta name="description" content="">
