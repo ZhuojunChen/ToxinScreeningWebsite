@@ -51,17 +51,45 @@
       </div>
 
 
-<?php 
-//initialize input
-//copy from pharynx
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      <?php 
+      //initialize input
+      //need to copy from pharynx
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-//Read from file
-$IOLfile = fopen("IOLfile", "r"); 
-echo fread($IOLfile, filesize("IOLfile"));
-fclose($IOLfile);
-}
-?> 
+        //Set up file upload
+        $target_dir = "temp/";
+        $target_file = $target_dir . "temp_file";
+        $uploadOK = 1;
+        $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
+
+        //Make sure file does not exist 
+        if(file_exists($target_file)){
+          echo "Sorry, file already exists. ";
+          $uploadOK = 0;
+        }
+
+        //TO DO: Limit file type
+        //Check if file is allowed to be uploaded
+        if($uploadOK == 0){
+          echo "Your file was not uploaded.";
+        }
+
+        //If so, upload file
+        else if($uploadOK = 1) {
+          if(move_uploaded_file($_FILES["IOLfile"]["tmp_name"], $target_file)) {
+            echo "The file ". basename($_FILES["IOLfile"]["name"]) . " has been uploaded.";
+            //Open the file
+            $IOLfile = fopen("temp/temp_file", "r"); 
+            echo fread($IOLfile, filesize("temp/temp_file"));
+            fclose($IOLfile);
+            unlink("temp/temp_file");
+          } 
+          else {
+            echo "There was an error uploading your file";
+          }
+        }
+      }
+      ?> 
 
     <h1>IOL</h1>
 <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
