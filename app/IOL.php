@@ -57,8 +57,8 @@
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //Set up file upload
-        $target_dir = "temp/";
-        $target_file = $target_dir . "temp_file";
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["IOLfile"]["name"]);
         $uploadOK = 1;
         $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
 
@@ -79,15 +79,21 @@
           if(move_uploaded_file($_FILES["IOLfile"]["tmp_name"], $target_file)) {
             echo "The file ". basename($_FILES["IOLfile"]["name"]) . " has been uploaded.";
             //Open the file
-            $IOLfile = fopen("temp/temp_file", "r"); 
-            echo fread($IOLfile, filesize("temp/temp_file"));
-            fclose($IOLfile);
-            unlink("temp/temp_file");
+          //  $IOLfile = fopen("uploads/temp_file", "r"); 
+          //  echo fread($IOLfile, filesize("temp/temp_file"));
+          //  fclose($IOLfile);
+          //  unlink("temp/temp_file");
           } 
           else {
             echo "There was an error uploading your file";
           }
         }
+        //Convert the file
+     //   $command="uptime"; $output; $retval; $errors="";
+       // exec ( $command ,  &$output, &$retval  );
+        //echo $output[0]."\n";
+       // unset($output);
+
       }
       ?> 
 
