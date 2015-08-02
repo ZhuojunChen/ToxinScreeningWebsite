@@ -43,16 +43,7 @@
         <div class="header">
           <ul class="nav nav-pills pull-right">
             <li class="active"><a href="/index.php">Home</a></li>
-            <li><a href="/livingstatus.php">Living Status</a></li>
-            <li><a href="/pharynx.php">Pharynx</a></li>
-            <li><a href="/phototaxis.php">Phototaxis</a></li>
-            <li><a href="/thermotaxis.php">Thermotaxis</a></li>
-            <li><a href="/IOL.php">IOL</a></li>
-            <li><a href="/curvature.php">Curvature</a></li>   
-            <li><a href="/eyes.php">Eyes</a></li>
-            <li><a href="/behavior.php">Behavior</a></li>
-            <li><a href="/imagepath.php">Image</a></li>
-            <li><a href="/test.php">Test</a></li>
+            <li><a href="/scanID.php">Scan ID</a></li>
           </ul>
           <h3 class="text-muted">toxin_screening</h3>
         </div>
