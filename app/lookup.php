@@ -45,20 +45,25 @@
       </div>
       <h1>Existing Plate</h1>
       <?php
-        $row = $_SESSION['row'];
-        //traits of the row
-        $chem = $row['chemical'];
-        $run = $row['run'];
-        $worm_type = $row['worm_type'];
-        $day= $row['day'];
-        $string = $row['pharynx'];
+        $idnum = $_SESSION['idnum'];
+        $query = "SELECT * FROM plate WHERE plateID = '$idnum'";
+  
+        $select_id = mysqli_query($con, $query);
 
-        echo nl2br(" chemical: $chem 
-          run: $run 
-          worm type: $worm_type 
-          day: $day
-          pharynx: $string \n");
+        while($row = mysqli_fetch_assoc($select_id)) {
+          //traits of the row
+          $chem = $row['chemical'];
+          $run = $row['run'];
+          $worm_type = $row['worm_type'];
+          $day= $row['day'];
+          $string = $row['pharynx'];
 
+          echo nl2br(" chemical: $chem 
+            run: $run 
+            worm type: $worm_type 
+            day: $day
+            pharynx: $string \n\n");
+        }
           if (empty($_POST["chemical"])) {
             $chemErr = "Chemical is required";
           } else {

@@ -66,14 +66,12 @@
         } else {
           $_SESSION['idnum'] = test_input($_POST["ID"]);
           $idnum = $_SESSION['idnum'];
-          $query = "SELECT * FROM plate
-          WHERE id = '$idnum'";
+          $query = "SELECT id FROM plate
+          WHERE plateID = '$idnum'";
 
           $select_id = mysqli_query($con, $query);
           
           if(mysqli_num_rows($select_id) > 0) {
-            $_SESSION['row'] = mysqli_fetch_assoc($select_id);
-            unset($_SESSION['idnum']);
             echo "<meta http-equiv='refresh' content='0;lookup.php' />";
           } else {
             echo "<meta http-equiv='refresh' content='0;pharynx.php' />";
