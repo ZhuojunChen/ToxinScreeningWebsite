@@ -48,8 +48,8 @@
       if(!empty($_SESSION['idnum'])) {
         unset($_SESSION['idnum']);
       }
-      if(!empty($_SESSION['row'])) {
-        unset($_SESSION['row']);
+      if(!empty($_SESSION['chem'])) {
+        unset($_SESSION['chem']);
       }
       //need to copy from pharynx
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -66,12 +66,14 @@
         } else {
           $_SESSION['idnum'] = test_input($_POST["ID"]);
           $idnum = $_SESSION['idnum'];
-          $query = "SELECT id FROM plate
+          $query = "SELECT id, chemical FROM plate
           WHERE plateID = '$idnum'";
 
           $select_id = mysqli_query($con, $query);
           
           if(mysqli_num_rows($select_id) > 0) {
+            $row = mysqli_fetch_assoc($select_id);
+            $_SESSION['chem'] = $row['chemical'];
             echo "<meta http-equiv='refresh' content='0;lookup.php' />";
           } else {
             echo "<meta http-equiv='refresh' content='0;pharynx.php' />";

@@ -33,18 +33,48 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
           <li><a href="/scanID.php">Scan ID</a></li>
-          <li class="active"><a href="/lookup.php">Existing Plate</a></li>
+          <li class="active"><a href="/lookup.php">Plate</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
-      <h1>Existing Plate</h1>
-      <?php
+      <h1>Plate ID: <?php echo $_SESSION['idnum']?></h1>
+
+  <label>Chemical: </label>
+  <?php if(($_SESSION['chem']))
+          echo $_SESSION['chem'];
+        else 
+          echo "No chemical indicated.";
+  ?>
+  <div class="form-group">
+    <label for="day">Day Number</label>
+    <select class="form-control" name = "day">
+      <option>1</option>
+      <option>7</option>
+      <option>12</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="worm_type">Worm Type</label>
+    <select class="form-control" name = "worm_type">
+      <option>Full</option>
+      <option>Head</option>
+      <option>Tail</option>
+    </select>
+  </div> 
+
+  <div class="container">
+  	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
+  </div>
+  <br>
+  <label>Existing Entries</label>
+  <br>
+  <?php
         $idnum = $_SESSION['idnum'];
         $query = "SELECT * FROM plate WHERE plateID = '$idnum'";
   
@@ -64,61 +94,11 @@
             day: $day
             pharynx: $string \n\n");
         }
-          if (empty($_POST["chemical"])) {
-            $chemErr = "Chemical is required";
-          } else {
-            $chem = test_input($_POST["chemical"]);
-          }
+         
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        }
       ?>
- <br>
- <form role="form">
-    <label for="Run">Run</label><br>
-    <label class="radio-inline">
-      <input type="radio" name="optradio">Run 1
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio">Run 2
-    </label>
- </form>
-
- <div class="form-group">
-  <label for="worm_type">Worm Type</label>
-  <select class="form-control" id="worm_type">
-    <option>Full</option>
-    <option>Head</option>
-    <option>Tail</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="day">Day Number</label>
-  <input type="number" class="form-control" id="day" placeholder="example: 7">
-</div>
-
-<div class="form-group">
-  <label for="date">Date</label>
-  <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
-</div>
-
-    <p>Please upload the matlab file with the phototaxis information</p>
-
-   <!--The file upload button-->
-     <input id="phototaxis" type="file" class="file">
-
-
-   <!--Specify allowed file types
-   <script>
-	$("#phototaxis").fileinput({
-    allowedFileExtensions: ["jpg"]
-	});
-   </script>-->
-
-  
-
-        <div class="container">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
-        </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
