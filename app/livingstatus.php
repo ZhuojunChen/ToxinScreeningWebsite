@@ -48,67 +48,31 @@
           <li><a href="/imagepath.php">Image</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
-      </div>
-
-
- 
-
+    </div>
     <h1>Living Status</h1>
-
-	<div class="form-group">
-    <label for="">Chemical Name</label>
-    <input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">
-  </div>
-
- <form role="form">
-    <label class="radio-inline">
-      <input type="radio" name="optradio">Run 1
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio">Run 2
-    </label>
- </form>
-
- <div class="form-group">
-  <label for="worm_type">Worm Type</label>
-  <select class="form-control" id="worm_type">
-    <option>Full</option>
-    <option>Head</option>
-    <option>Tail</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="day">Day Number</label>
-  <input type="number" class="form-control" id="day" placeholder="example: 7">
-</div>
-
-<div class="form-group">
-  <label for="date">Date</label>
-  <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
-</div>
-
-    <p>
-    Please upload the matlab file with the living status of the worms. 
-    This should be a matlab matrix with 1 denoting living, and 0 denoting not living 
-    </p>
-
-   <!--The file upload button-->
-     <input id="livingstatus" type="file" class="file">
-
-
-   <!--Specify allowed file types
-   <script>
-	$("#phototaxis").fileinput({
-    allowedFileExtensions: ["jpg"]
-	});
-   </script>-->
-
-  
-
-        <div class="container">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
-        </div>
+  <form role="form" method="post" enctype="multipart/form-data">
+    <div class="container">
+      <div class="form-group">
+        <label for="livingstatus">Living Status</label>
+        <select name="livingstatus" type="text" class="form-control" id='livingstat'>
+          <option>Alive</option>
+          <option>Dead</option>
+        </select>
+      </div>
+      <div class="container" align="center">
+        <input type="submit" class="btn btn-md btn-success" id="submitBtn">
+        <input type="button" class="btn btn-md btn-primary" name="undo" value="Undo" disabled="true">
+      </div>
+  </form>
+   <?php
+      if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo "Successful Submit";  
+        echo "<script type='text/javascript'>
+          document.getElementById(\"submitBtn\").disabled = true;
+          document.getElementById(\"livingstat\").disabled = true;
+        </script>";
+      }
+    ?>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

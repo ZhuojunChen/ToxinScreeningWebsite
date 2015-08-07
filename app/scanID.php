@@ -51,6 +51,12 @@
       if(!empty($_SESSION['chem'])) {
         unset($_SESSION['chem']);
       }
+      if(!empty($_SESSION['run'])) {
+        unset($_SESSION['run']);
+      }
+      if(!empty($_SESSION['date'])) {
+        unset($_SESSION['date']);
+      }
       //need to copy from pharynx
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Transform data
@@ -60,13 +66,13 @@
            $data = htmlspecialchars($data);
            return $data;
         }
-
         if (empty($_POST["ID"])) {
+          // Should never be reached because of the bootstrap required form
           echo "<script type='text/javascript'>alert('Enter a valid integer!');</script>";
         } else {
           $_SESSION['idnum'] = test_input($_POST["ID"]);
           $idnum = $_SESSION['idnum'];
-          $query = "SELECT id, chemical FROM plate
+          $query = "SELECT id, chemical, run FROM plate
           WHERE plateID = '$idnum'";
 
           $select_id = mysqli_query($con, $query);
@@ -74,20 +80,20 @@
           if(mysqli_num_rows($select_id) > 0) {
             $row = mysqli_fetch_assoc($select_id);
             $_SESSION['chem'] = $row['chemical'];
+            $_SESSION['run'] = $row['run'];
             echo "<meta http-equiv='refresh' content='0;lookup.php' />";
           } else {
-            echo "<meta http-equiv='refresh' content='0;pharynx.php' />";
+            echo "<meta http-equiv='refresh' content='0;createplate.php' />";
           }
         }
 
       }
       ?> 
     <h1>Plate Identification</h1>
-<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
-enctype="multipart/form-data">
+<form role="form" method="post" enctype="multipart/form-data">
 <div class="form-group">
   <label for="ID">ID Number</label>
-  <input type="number" class="form-control" name = "ID" placeholder="Scan or type ID">
+  <input type="number" class="form-control" min='1' name = "ID" placeholder="Scan or type ID" required autofocus>
 </div>
 
 <div class="container" align="center">

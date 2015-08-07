@@ -38,37 +38,36 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
           <li><a href="/scanID.php">Scan ID</a></li>
-          <li class="active"><a href="/lookup.php">Existing Plate</a></li>
+          <li class="active"><a href="/createplate.php">Create Plate</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
       <h1>Plate ID: <?php echo $_SESSION['idnum']?></h1>
 
-  <label>Chemical</label><br>
-  <div class="form-group">
-  <input type="text" class="form-control" disabled="true" value="<?php
-        if(($_SESSION['chem']))
-          echo $_SESSION['chem'];
-        else 
-          echo 'No chemical indicated.';
-  ?>">
-  </div>
-  <label>Run Number</label><br>
-  <div class="form-group">
-  <input type="text" class="form-control" disabled="true" value="<?php
-        if(($_SESSION['run']))
-          echo $_SESSION['run'];
-        else 
-          echo "No experiment number indicated.";
-  ?>">
-  </div>
+  <label for="chemical">Chemical Name</label> 
   <form role="form" method="post" enctype="multipart/form-data">
+  
   <div class="form-group">
-    <label for="day">Day Number</label>
-    <select class="form-control" name = "day">
+    <input type="text" required class="form-control" name="chemical" placeholder="Enter the chemical name.">
+  </div>
+  
+    <div class="form-group" align="left">
+    <label for="run">Run</label><br>
+    <label class="radio-inline">
+      <input type="radio" name="run" value="1" required>Run 1
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="run" value="2">Run 2
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="run" value="3">Run 3
+    </label>
+    </div>
+ 
+  <div class="form-group">
+   <label for="day">Day Number</label>
+    <select type="number" class="form-control" name="day" value='1' readonly='readonly'>
       <option>1</option>
-      <option>7</option>
-      <option>12</option>
     </select>
   </div>
   <div class="form-group">
@@ -87,44 +86,34 @@
   <div class="container" align="center">
   	  <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
   </div>
+  </form>
   <br>
-  <label>Existing Entries</label>
+  <label>No Existing Entries. New Plate Entry. </label>
   <br>
   <?php
         $idnum = $_SESSION['idnum'];
-        $query = "SELECT worm_type, day FROM plate WHERE plateID = '$idnum'";
-        $select_id = mysqli_query($con, $query);
-
-        while($row = mysqli_fetch_assoc($select_id)) {
-          //traits of the row
-          $worm_type = $row['worm_type'];
-          $day= $row['day'];
-
-          echo nl2br("day: $day
-            worm type: $worm_type\n\n");
-        }
          
         if($_SERVER["REQUEST_METHOD"] == "POST") {
+          $run = $_POST['run'];
+          $chemical = $_POST['chemical'];
           $worm_type = $_POST['worm_type'];
           $day = $_POST['day'];
-          
-          unset($_POST['worm_type']);
-          unset($_POST['day']);
+          $date = $_POST['date'];
+
+          unset($_POST['chemical']);
+          unset($_POST['run']);
           unset($_SESSION['idnum']);
 
-          $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$idnum'";
+          $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid) VALUES ('$chemical', '$run', '$worm_type', '$day', '$idnum')";
           $select_id = mysqli_query($con, $query);
 
-          if ($row = mysqli_fetch_assoc($select_id)) { 
-            $_SESSION['idnum'] = $row['id'];
-            $_SESSION['date'] = $_POST['date'];
+          if ($select_id) {
             echo "<script type='text/javascript'>
-                    window.location.href = 'livingstatus.php';
-                  </script>";
+                alert('Successful Plate Creation');    
+                window.location.href = 'livingstatus.php';
+             </script>";
           } else {
-            echo "<script type='text/javascript'>
-                    window.location.href = 'livingstatus.php';
-                  </script>";
+            echo "Error updating plate: " . mysqli_error($con);
           }
         }
       ?>

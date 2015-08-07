@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <html class="no-js" lang="">
@@ -18,6 +19,7 @@
 
 <!-- build:js scripts/vendor/modernizr.js -->
 <script src="/bower_components/modernizr/modernizr.js"></script>
+
 <!-- endbuild -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -47,7 +49,7 @@
       	</div>
 
 
-<?php 
+<?php
 //initialize input variables
 $chemErr = $runErr = $worm_typeErr = $dayErr = $dateErr = "";
 $chem = $run = $worm_type = $day = $string = "";
@@ -441,46 +443,6 @@ function test_input($data) {
       	<h1>Pharynx Extension</h1>
 
       	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      		<div class="form-group">
-      			<label for="chemical">Chemical Name</label>
-      			<span class="error">* <?php echo $chemErr;?></span>
-      			<input type="text" class="form-control" name="chemical" placeholder="Enter chemical name">
-      		</div>
-
-      		<label for="run">Run</label> 
-    		<span class="error">* <?php echo $runErr;?></span> 
-    		<br>
-      		<label class="radio-inline">
-      			<input type="radio" name="run" value="1">Run 1
-      		</label>
-      		<label class="radio-inline">
-      			<input type="radio" name="run" value="2">Run 2
-      		</label>
-
-      		<div class="form-group">
-      			<label for="worm_type">Worm Type</label>
-      			<span class="error">* <?php echo $worm_typeErr;?></span>
-      			<select class="form-control" name="worm_type">
-      				<option>Full</option>
-      				<option>Head</option>
-      				<option>Tail</option>
-      			</select>
-      		</div>
-
-      		<div class="form-group">
-      			<label for="day">Day Number</label>
-      			<span class="error">* <?php echo $dayErr;?></span>
-      			<input type="number" class="form-control" name="day" placeholder="example: 7">
-      		</div>
-
-<!--
-      		<div class="form-group">
-      			<label for="date">Date</label>
-      			<span class="error">* <?php //echo $dateErr;?></span>
-      			<input type="date" class="form-control" name="date" placeholder="MM/DD/YYYY">
-      		</div>
--->
-
       		<p>Click all worms that have a pharynx extension</p>
 
       		<!--The grid of buttons used to select for pharynx extension-->
@@ -670,12 +632,12 @@ function test_input($data) {
       				</div>
       			</div>
       		</div>	
-
+          <p>
       		<div class="container" align="center">
       			<p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
       		</div>
       	</form>
-
+            
       	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
       	<script>
       		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
