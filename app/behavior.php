@@ -54,40 +54,6 @@
  
 
     <h1>Behavior</h1>
-
-	<div class="form-group">
-    <label for="">Chemical Name</label>
-    <input type="text" class="form-control" id="chemical" placeholder="Enter chemical name">
-  </div>
-
- <form role="form">
-    <label class="radio-inline">
-      <input type="radio" name="optradio">Run 1
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="optradio">Run 2
-    </label>
- </form>
-
- <div class="form-group">
-  <label for="worm_type">Worm Type</label>
-  <select class="form-control" id="worm_type">
-    <option>Full</option>
-    <option>Head</option>
-    <option>Tail</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="day">Day Number</label>
-  <input type="number" class="form-control" id="day" placeholder="example: 7">
-</div>
-
-<div class="form-group">
-  <label for="date">Date</label>
-  <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
-</div>
-
     <p>Please describe the worm behavior somehow</p>
 
 
@@ -101,7 +67,7 @@
 
   
 
-        <div class="container">
+        <div class="container" align="center">
         	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
         </div>
 

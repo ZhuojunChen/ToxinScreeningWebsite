@@ -57,6 +57,9 @@
       if(!empty($_SESSION['date'])) {
         unset($_SESSION['date']);
       }
+      if(!empty($_SESSION['day'])) {
+        unset($_SESSION['day']);
+      }
       //need to copy from pharynx
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Transform data

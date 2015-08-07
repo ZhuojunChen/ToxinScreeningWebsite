@@ -92,7 +92,7 @@
   <br>
   <?php
         $idnum = $_SESSION['idnum'];
-        $query = "SELECT worm_type, day FROM plate WHERE plateID = '$idnum'";
+        $query = "SELECT worm_type, day FROM plate WHERE plateID = '$idnum' ORDER BY day";
         $select_id = mysqli_query($con, $query);
 
         while($row = mysqli_fetch_assoc($select_id)) {
@@ -116,6 +116,7 @@
           $select_id = mysqli_query($con, $query);
 
           if ($row = mysqli_fetch_assoc($select_id)) { 
+            $_SESSION['day'] = $day;
             $_SESSION['idnum'] = $row['id'];
             $_SESSION['date'] = $_POST['date'];
             echo "<script type='text/javascript'>

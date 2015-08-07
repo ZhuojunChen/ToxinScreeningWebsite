@@ -51,7 +51,6 @@
 
 <?php
 //initialize input variables
-$chemErr = $runErr = $worm_typeErr = $dayErr = $dateErr = "";
 $chem = $run = $worm_type = $day = $string = "";
 
 
@@ -63,32 +62,6 @@ function test_input($data) {
    $data = htmlspecialchars($data);
    return $data;
 }
-
-  //Get input data
-  //Data for plate
-  if (empty($_POST["chemical"])) {
-    $chemErr = "Chemical is required";
-  } else {
-    $chem = test_input($_POST["chemical"]);
-  }
-
-  if (empty($_POST["run"])) {
-    $runErr = "Run is required";
-  } else {
-    $run = test_input($_POST["run"]);
-  }
-
-  if (empty($_POST["worm_type"])) {
-    $worm_typeErr = "Worm type is required";
-  } else {
-    $worm_type = test_input($_POST["worm_type"]);
-  }
-
-  if (empty($_POST["day"])) {
-    $dayErr = "Day is required";
-  } else {
-    $day = test_input($_POST["day"]);
-  }
 
   //Input for wells from checkboxes
   //Row A
