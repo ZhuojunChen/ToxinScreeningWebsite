@@ -1,3 +1,4 @@
+<?php session_start(); $idnum = 'http://barcode.tec-it.com/barcode.ashx?data='; $idnum .= $_SESSION['platenum']; unset($_SESSION['platenum']); $idnum .= '&code=Code128&dpi=72'?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
@@ -68,7 +69,7 @@
           <a href='http://www.tec-it.com' title='Barcode Software by TEC-IT'>Barcode Software</a>
         </td>
         <td>
-          <img src='http://barcode.tec-it.com/barcode.ashx?data=IDNumberHere&code=Code128&dpi=72' alt='Barcode Generator TEC-IT'/>
+          <img <?php echo "src='$idnum'";?> alt='Barcode Generator TEC-IT'/>
         </td>
       </tr>
     </table>

@@ -48,12 +48,18 @@
 
           unset($_POST['chemical']);
           unset($_POST['run']);
-          unset($_SESSION['idnum']);
 
           $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid) VALUES ('$chemical', '$run', '$worm_type', '$day', '$idnum')";
           $select_id = mysqli_query($con, $query);
 
           if ($select_id) {
+            $rownum = "SELECT id FROM plate WHERE plateid = '$idnum'";
+            $rownum = mysqli_query($con, $rownum);
+            $rownum = mysqli_fetch_assoc($rownum);
+            $rownum = $rownum['id'];
+
+            $_SESSION['idnum'] = $rownum;
+            $_SESSION['platenum'] = $idnum;
             echo "<script type='text/javascript'>
                 alert('Successful Plate Creation');    
                 window.location.href = 'printpage.php';
