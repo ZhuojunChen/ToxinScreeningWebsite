@@ -69,6 +69,7 @@
 
 
         <h1>Eyes</h1>
+        <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
         <table style="width:100%">
           <tr>
@@ -86,74 +87,82 @@
           <tr>
            <th>A</th>
            <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select class="selectpicker" data-style="btn-primary" required>
+              <option value=""></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
             </select>
           </td>
         </tr>
@@ -161,74 +170,82 @@
         <tr>
          <th>B</th>
          <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
           </select>
         </td>
       </tr>
@@ -236,74 +253,82 @@
       <tr>
        <th>C</th>
        <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+            <option value=""></option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
         </select>
       </td>
     </tr>
@@ -311,74 +336,82 @@
     <tr>
      <th>D</th>
      <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+          <option value=""></option>
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary">
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
+      <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
       </select>
     </td>
   </tr>
@@ -386,74 +419,82 @@
   <tr>
    <th>E</th>
    <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+        <option value=""></option>
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary">
-      <option>0</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
+    <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
     </select>
   </td>
 </tr>
@@ -461,74 +502,82 @@
 <tr>
  <th>F</th>
  <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+      <option value=""></option>
+      <option value=0>0</option>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 
 <td>
-  <select class="selectpicker" data-style="btn-primary">
-    <option>0</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
+  <select class="selectpicker" data-style="btn-primary" required>
+    <option value=""></option>
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
   </select>
 </td>
 </tr>
@@ -537,8 +586,9 @@
 
 
 <div class="container" align="center">
- <p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
+ <p><input type="submit" class="btn btn-md btn-success" name = submit></p>
 </div>
+</form>
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -572,14 +622,7 @@
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <script type="text/javascript" src="app/styles/bootstrap-select.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $('.selectpicker').selectpicker({
-      style: 'btn-info',
-      size: 4
-    });
-  });
-</script>
+
 <!-- endbuild -->
 
 <!-- build:js scripts/main.js -->

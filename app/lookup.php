@@ -37,7 +37,7 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
-          <li><a href="/scanID.php">Scan ID</a></li>
+          <li><a href="/scanID.php">Plate Entry</a></li>
           <li class="active"><a href="/lookup.php">Existing Plate</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
@@ -65,27 +65,31 @@
   <form role="form" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="day">Day Number</label>
-    <select class="form-control" name = "day">
-      <option>1</option>
-      <option>7</option>
-      <option>12</option>
+    <select class="form-control" name="day" required>
+      <option value="">Select a day</option>
+      <option value='1'>1</option>
+      <option value='7'>7</option>
+      <option value='12'>12</option>
     </select>
   </div>
   <div class="form-group">
     <label for="worm_type">Worm Type</label>
-    <select class="form-control" name = "worm_type">
-      <option>Full</option>
-      <option>Head</option>
-      <option>Tail</option>
+    <select class="form-control" name = "worm_type" required>
+      <option value="">Select a type</option>
+      <option value="Full">Full</option>
+      <option value="Head">Head</option>
+      <option value="Tail">Tail</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="date">Entry Date</label>
+    <label for="date">Today's Date</label>
     <span class="error"><?php //echo $dateErr;?></span>
     <input type="date" class="form-control" name="date" disabled='true' value='<?php echo date('Y-m-d'); ?>'>
   </div> 
   <div class="container" align="center">
-  	  <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
+  	  <p><input type="submit" class="btn btn-md btn-success" name="submit">
+         <input type="button" class="btn btn-md btn-info" name="print" value="Print"
+                onclick="location.href='printpage2.php'"></p>
   </div>
   <br>
   <label>Existing Entries</label>
@@ -119,13 +123,27 @@
             $_SESSION['day'] = $day;
             $_SESSION['idnum'] = $row['id'];
             $_SESSION['date'] = $_POST['date'];
-            echo "<script type='text/javascript'>
-                    window.location.href = 'livingstatus.php';
-                  </script>";
+            echo "<meta http-equiv='refresh' content='0;livingstatus.php' />";
           } else {
-            echo "<script type='text/javascript'>
+            $run = $_SESSION['run'];
+            $chem = $_SESSION['chem'];
+            
+            $newRow = "INSERT INTO plate(chemical, run, worm_type, day, plateID) 
+                      VALUES('$chem', '$run', '$worm_type', '$day', '$idnum')";
+
+            if ($newRow = mysqli_query($con, $newRow)) {
+              $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$idnum'";
+              $select_id = mysqli_query($con, $query);
+              $row = mysqli_fetch_assoc($select_id);
+
+              $_SESSION['idnum'] = $row['id'];
+              echo "<script type='text/javascript'>
                     window.location.href = 'livingstatus.php';
                   </script>";
+            } else {
+              echo "Error: ".mysqli_error($con);
+            }
+            
           }
         }
       ?>

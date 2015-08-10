@@ -1,4 +1,3 @@
-<?php session_start(); date_default_timezone_set('America/Los_Angeles');?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
@@ -28,102 +27,68 @@
      of text file preview via modal dialog -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
 
+  
   <body>
-    <?php
-        $idnum = 1;
-        $getID = "SELECT MAX(plateID) + 1 as plateNum FROM plate";
-        $getID = mysqli_query($con, $getID);
-        $getID = mysqli_fetch_assoc($getID);
-          
-        if($getID['plateNum']) {
-          $idnum = $getID['plateNum'];
-        }
-         
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
-          $run = $_POST['run'];
-          $chemical = $_POST['chemical'];
-          $worm_type = $_POST['worm_type'];
-          $day = $_POST['day'];
-          $date = $_POST['date'];
-
-          unset($_POST['chemical']);
-          unset($_POST['run']);
-          unset($_SESSION['idnum']);
-
-          $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid) VALUES ('$chemical', '$run', '$worm_type', '$day', '$idnum')";
-          $select_id = mysqli_query($con, $query);
-
-          if ($select_id) {
-            echo "<script type='text/javascript'>
-                alert('Successful Plate Creation');    
-                window.location.href = 'printpage.php';
-             </script>";
-          } else {
-            echo "Error updating plate: " . mysqli_error($con);
-          }
-        }
-      ?>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
-          <li><a href="/scanID.php">Plate Entry</a></li>
-          <li class="active"><a href="/createplate.php">Create Plate</a></li>
+          <li><a href="/livingstatus.php">Living Status</a></li>
+          <li><a href="/pharynx.php">Pharynx</a></li>
+          <li><a href="/phototaxis.php">Phototaxis</a></li>
+          <li><a href="/thermotaxis.php">Thermotaxis</a></li>
+          <li><a href="/IOL.php">IOL</a></li>
+          <li><a href="/curvature.php">Curvature</a></li>   
+          <li><a href="/eyes.php">Eyes</a></li>
+          <li><a href="/behavior.php">Behavior</a></li>
+          <li><a href="/imagepath.php">Image</a></li>
+          <li class="active"><a href="/printpage.php">Print</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
-      <h1>Plate ID: <?php echo $idnum?></h1>
 
-  <label for="chemical">Chemical Name</label> 
-  <form role="form" method="post" enctype="multipart/form-data">
-  
-  <div class="form-group">
-    <input type="text" required class="form-control" name="chemical" placeholder="Enter the chemical name.">
-  </div>
-  
-    <div class="form-group" align="left">
-    <label for="run">Run</label><br>
-    <label class="radio-inline">
-      <input type="radio" name="run" value="1" required>Run 1
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="run" value="2">Run 2
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="run" value="3">Run 3
-    </label>
-    </div>
+
  
-  <div class="form-group">
-   <label for="day">Day Number</label>
-    <select type="number" class="form-control" name="day" value='1' readonly='readonly'>
-      <option>1</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="worm_type">Worm Type</label>
-    <select class="form-control" name = "worm_type" required>
-      <option value="">Select a type</option>
-      <option value="Full">Full</option>
-      <option value="Head">Head</option>
-      <option value="Tail">Tail</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="date">Entry Date</label>
-    <span class="error"><?php //echo $dateErr;?></span>
-    <input type="date" class="form-control" name="date" disabled='true' value='<?php echo date('Y-m-d'); ?>'>
-  </div> 
-  <div class="container" align="center">
-  	  <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
-  </div>
-  </form>
-  <br>
-  <label>New Plate Entry.</label>
-  <br>
+
+    <h1>Print Barcode</h1>
+
+    <p>(Work in Progress)</p>
+
+    <table align="center">
+      <tr>
+        <td style='padding:10px; text-align:center; font-size:15px; font-family:Arial,Helvetica;'>
+          <a href='http://www.tec-it.com' title='Barcode Software by TEC-IT'>
+            <img src='http://www.tec-it.com/pics/banner/web/TEC-IT_Banner_120x42.gif' alt='Barcode Software by TEC-IT' border='0' />
+          </a>
+          <br/>
+          <a href='http://www.tec-it.com' title='Barcode Software by TEC-IT'>Barcode Software</a>
+        </td>
+        <td>
+          <img src='http://barcode.tec-it.com/barcode.ashx?data=IDNumberHere&code=Code128&dpi=72' alt='Barcode Generator TEC-IT'/>
+        </td>
+      </tr>
+    </table>
+
+   <!--The file upload button-->
+
+
+   <!--Specify allowed file types
+   <script>
+	$("#phototaxis").fileinput({
+    allowedFileExtensions: ["jpg"]
+	});
+   </script>-->
+
+  
+   <br>
+        <div class="container" align="center">
+        	<p><input type="button" class="btn btn-md btn-success" value="Print"></p>
+        </div>
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

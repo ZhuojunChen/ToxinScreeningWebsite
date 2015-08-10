@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
@@ -54,9 +55,10 @@
     <div class="container">
       <div class="form-group">
         <label for="livingstatus">Living Status</label>
-        <select name="livingstatus" type="text" class="form-control" id='livingstat'>
-          <option>Alive</option>
-          <option>Dead</option>
+        <select name="livingstatus" type="text" class="form-control" required>
+          <option value=""></option>
+          <option value='1'>Alive</option>
+          <option value='0'>Dead</option>
         </select>
       </div>
       <div class="container" align="center">
@@ -66,7 +68,18 @@
   </form>
    <?php
       if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo "Successful Submit";  
+        $row_id = $_SESSION['idnum'];
+        
+        $status = $_POST['livingstatus'];
+
+        $query = "UPDATE plate SET living_status='$status' WHERE id=$row_id";
+
+        if (mysqli_query($con, $query)) {
+          echo nl2br("Updated plate successfully \n");
+        } else {
+          echo "Error updating plate: " . mysqli_error($con);
+        }
+        
         echo "<script type='text/javascript'>
           document.getElementById(\"submitBtn\").disabled = true;
           document.getElementById(\"livingstat\").disabled = true;

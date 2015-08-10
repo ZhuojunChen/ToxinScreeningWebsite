@@ -37,7 +37,7 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
-          <li class="active"><a href="/scanID.php">Scan ID</a></li>
+          <li class="active"><a href="/scanID.php">Plate Entry</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
@@ -86,7 +86,8 @@
             $_SESSION['run'] = $row['run'];
             echo "<meta http-equiv='refresh' content='0;lookup.php' />";
           } else {
-            echo "<meta http-equiv='refresh' content='0;createplate.php' />";
+            // Indicate that a new plate needs to be created
+            echo "<script type='text/javascript'>alert('No previous plate entries found. Create a new plate.');</script>";
           }
         }
 
@@ -100,7 +101,9 @@
 </div>
 
 <div class="container" align="center">
-  <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
+  <p><input type="submit" class="btn btn-md btn-success" name="submit">
+  <input type="button" class="btn btn-md btn-info" name="create" value="New Plate" 
+         onclick="location.href='createplate.php';"></p>
 </div>
 </form>
 

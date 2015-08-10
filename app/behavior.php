@@ -54,9 +54,12 @@
  
 
     <h1>Behavior</h1>
-    <p>Please describe the worm behavior somehow</p>
-
-
+    <p>Please upload raw data(.mat) and calculations(csv).</p>
+    <label for="matfile">.mat File </label>
+    <input type="file" name ="matfile" class="file">
+    <br>
+    <label for="csvfile">.csv File </label>
+    <input type="file" name ="csvfile" class="file">
 
    <!--Specify allowed file types
    <script>
@@ -68,7 +71,7 @@
   
 
         <div class="container" align="center">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
+        	<p><input type="submit" id='submitBtn' class="btn btn-md btn-success" onclick="document.getElementById('submitBtn').disabled=true;"></input></p>
         </div>
 
 

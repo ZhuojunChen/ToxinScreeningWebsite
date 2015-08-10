@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
@@ -55,25 +56,43 @@
 
     <h1>Curvature</h1>
 
-    <p>Please upload the matlab file with the body curvature information</p>
-
-   <!--The file upload button-->
-     <input id="curvature" type="file" class="file">
-
-
-   <!--Specify allowed file types
-   <script>
-	$("#phototaxis").fileinput({
-    allowedFileExtensions: ["jpg"]
-	});
-   </script>-->
-
+    <p>Please select the curvature type observed. (Need Pictures )</p>
   
+    <form role="form" method="post" enctype="multipart/form-data">
+      <div class="form-group" align="center">
+        <label class="radio-inline">
+          <input type="radio" name="curv" value="1" required>Shape 1 Slim Straight
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="curv" value="2">Shape 2 Stubby
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="curv" value="3">Shape 3 Spiral
+        </label>
+      </div>
+      <div class="container" align="center">
+      	<p><input type="submit" class="btn btn-md btn-success" id="submitBtn"></p>
+      </div>
+    </form>
+    <?php
+      if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $row_id = $_SESSION['idnum'];
+        
+        $curv = $_POST['curv'];
 
-        <div class="container" align="center">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
-        </div>
+        $query = "UPDATE plate SET curvature='$curv' WHERE id=$row_id";
 
+        if (mysqli_query($con, $query)) {
+          echo nl2br("Updated plate successfully \n");
+        } else {
+          echo "Error updating plate: " . mysqli_error($con);
+        }
+        
+        echo "<script type='text/javascript'>
+          document.getElementById(\"submitBtn\").disabled = true;
+        </script>";
+      }
+    ?>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
