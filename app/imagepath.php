@@ -57,8 +57,9 @@
 
     <p>Please upload images for each worm...</p>
 
-   <!--The file upload button
-     <input id="thermotaxis" type="file" class="file"> -->
+   <!--The file upload button -->
+
+     <input name="image" type="file" class="file">
 
 
    <!--Specify allowed file types
@@ -71,7 +72,7 @@
   
 
         <div class="container" align="center">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
+        	<p><input type="submit" class="btn btn-md btn-success" id="submitBtn"></p>
         </div>
 
 

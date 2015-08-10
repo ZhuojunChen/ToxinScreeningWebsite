@@ -508,298 +508,64 @@ function test_input($data) {
 
   //Input for wells from checkboxes
   //Row A
-  if ($_POST["A1"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["A2"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["A3"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["A4"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }  
-
-  if ($_POST["A5"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["A6"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["A7"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["A8"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
+  $string .= $_POST['A1'];
+  $string .= $_POST['A2'];
+  $string .= $_POST['A3'];
+  $string .= $_POST['A4'];
+  $string .= $_POST['A5'];
+  $string .= $_POST['A6'];
+  $string .= $_POST['A7'];
+  $string .= $_POST['A8'];
 
   //Row B
-  if ($_POST["B1"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["B2"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["B3"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["B4"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }  
-
-  if ($_POST["B5"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["B6"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["B7"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["B8"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
+  $string .= $_POST['B1'];
+  $string .= $_POST['B2'];
+  $string .= $_POST['B3'];
+  $string .= $_POST['B4'];
+  $string .= $_POST['B5'];
+  $string .= $_POST['B6'];
+  $string .= $_POST['B7'];
+  $string .= $_POST['B8'];
 
   //Row C
-  if ($_POST["C1"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["C2"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["C3"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["C4"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }  
-
-  if ($_POST["C5"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["C6"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["C7"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["C8"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
+  $string .= $_POST['C1'];
+  $string .= $_POST['C2'];
+  $string .= $_POST['C3'];
+  $string .= $_POST['C4'];
+  $string .= $_POST['C5'];
+  $string .= $_POST['C6'];
+  $string .= $_POST['C7'];
+  $string .= $_POST['C8'];
 
   //Row D
-  if ($_POST["D1"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["D2"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["D3"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["D4"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }  
-
-  if ($_POST["D5"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["D6"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["D7"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["D8"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
+  $string .= $_POST['D1'];
+  $string .= $_POST['D2'];
+  $string .= $_POST['D3'];
+  $string .= $_POST['D4'];
+  $string .= $_POST['D5'];
+  $string .= $_POST['D6'];
+  $string .= $_POST['D7'];
+  $string .= $_POST['D8'];
 
   //Row E
-  if ($_POST["E1"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["E2"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["E3"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["E4"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }  
-
-  if ($_POST["E5"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["E6"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["E7"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["E8"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
+  $string .= $_POST['E1'];
+  $string .= $_POST['E2'];
+  $string .= $_POST['E3'];
+  $string .= $_POST['E4'];
+  $string .= $_POST['E5'];
+  $string .= $_POST['E6'];
+  $string .= $_POST['E7'];
+  $string .= $_POST['E8'];
 
   //Row F
-  if ($_POST["F1"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["F2"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["F3"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["F4"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }  
-
-  if ($_POST["F5"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["F6"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["F7"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
-
-  if ($_POST["F8"]){
-    $string .= "1";
-  } else{
-    $string .= "0";
-  }
+  $string .= $_POST['F1'];
+  $string .= $_POST['F2'];
+  $string .= $_POST['F3'];
+  $string .= $_POST['F4'];
+  $string .= $_POST['F5'];
+  $string .= $_POST['F6'];
+  $string .= $_POST['F7'];
+  $string .= $_POST['F8'];
 
   $query = "UPDATE plate SET pharynx='$string' WHERE id='$row_id'";
 

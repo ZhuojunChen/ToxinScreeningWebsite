@@ -37,6 +37,7 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="/index.php">Home</a></li>
+          <li><a href="dbsearch.php">Data Search</a></li>
           <li class="active"><a href="/scanID.php">Plate Entry</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
