@@ -56,7 +56,7 @@
     </div>
     <h1>Living Status</h1>
     <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <p>Indicate all worm's living status.</p>
+        <p>Indicate all worm's living status. 0 - Dead 1 - Alive</p>
 
         <!--The grid of buttons used to select for pharynx extension-->
         <table style="width:100%">

@@ -64,7 +64,7 @@
       	<h1>Pharynx Extension</h1>
 
       	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      		<p>Indicate all worms that have a pharynx extension</p>
+      		<p>Indicate all worms that have a pharynx extension. 0 - Does not have extension 1 - Has extension</p>
 
       		<!--The grid of buttons used to select for pharynx extension-->
           <table style="width:100%">
