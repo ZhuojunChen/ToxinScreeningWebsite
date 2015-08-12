@@ -188,6 +188,8 @@
     // output data of each row
 				while($row = mysqli_fetch_assoc($result)) {
 					$eyes = $row["eyes"];
+					$IOLfile = $row["IOL"];
+					$IOLtrailing = basename($IOLfile);
 
 					echo "<tr>" 
 
@@ -232,7 +234,7 @@
 					."</td>"    
 
 					."<td>" 
-					. $row["IOL"] 
+					."<a href='$IOLfile'>$IOLtrailing</a>"
 					."</td>" 
 
 					."<td>" 
