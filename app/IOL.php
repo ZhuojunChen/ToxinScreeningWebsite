@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
@@ -56,7 +57,7 @@
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //Set up file upload
-        $target_dir = "uploads/";
+        $target_dir = "uploads/IOL/";
         $target_file = $target_dir . basename($_FILES['IOLfile']['name']);
         $uploadOK = 1;
         $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -77,6 +78,15 @@
         else if($uploadOK = 1) {
           if(move_uploaded_file($_FILES["IOLfile"]["tmp_name"], $target_file)) {
             echo "The file ". basename($_FILES["IOLfile"]["name"]) . " has been uploaded.";
+
+            $row_id = $_SESSION['idnum'];
+            $query = "UPDATE plate SET IOL='$target_file' WHERE id='$row_id'";
+
+            if (mysqli_query($con, $query)) {
+              echo nl2br("Updated plate successfully \n");
+            } else {
+              echo "Error updating plate: " . mysqli_error($con);
+            }
             //Open the file
           //  $IOLfile = fopen("uploads/temp_file", "r"); 
           //  echo fread($IOLfile, filesize("temp/temp_file"));

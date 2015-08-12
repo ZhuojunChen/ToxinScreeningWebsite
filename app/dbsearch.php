@@ -5,6 +5,17 @@
 
 <!-- DC Table Styles I CSS -->
 <head>
+  <link rel="stylesheet" href="styles/main.css">
+    <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
+    of text file preview via modal dialog -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>  
+    
 	<style type="text/css">
 		.zui-table {
 			border: solid 1px #DDEEEE;
@@ -52,6 +63,15 @@
 </head>
 
 <body>
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li><a href="/index.php">Home</a></li>
+            <li class="active"><a href="dbsearch.php">Data Search</a></li>
+            <li><a href="/scanID.php">Plate Entry</a></li>
+          </ul>
+          <h3 class="text-muted">toxin_screening</h3>
+        </div>
+
 <label>Planarian Database</label>
 	<table class="zui-table zui-table-zebra zui-table-horizontal">
 		<thead>
