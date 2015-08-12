@@ -57,6 +57,7 @@
 		<thead>
 			<tr> 
 				<th>  id </th>
+				<th> plate id </th>
 				<th> chemical </th>
 				<th> run </th>
 				<th> worm type</th>
@@ -76,6 +77,7 @@
 			<form role="form" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<tr>
 					<td> <input type="search" name="id" style="width: 50px;"> </td>
+					<td> <input type="search" name="plate_id" style="width: 50px;"> </td>
 					<td> <input type="search" name="chemical"> </td>
 					<td> <input  type="search" name="run" style="width: 35px;"> </td>
 					<td> <input  type="search" name="worm_type" style="width: 60px;"> </td>
@@ -103,6 +105,16 @@
 					}
 					else{
 						$sql .= " WHERE id='$id'";
+					}
+				}
+
+				$plateID = $_GET['plateID'];
+				if(!empty("$plateID")){
+					if (strpos($sql,'WHERE') !== false) {
+						$sql .= " AND plateID='$plateID'";
+					}
+					else{
+						$sql .= " WHERE plateID='$plateID'";
 					}
 				}
 
@@ -162,6 +174,10 @@
 					. "<td>" 
 					. $row["id"] 
 					. "</td>" 
+
+					. "<td>"
+					. $row["plateID"]
+					. "</td>"
 
 					."<td>"
 					. $row["chemical"]

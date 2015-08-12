@@ -15,17 +15,17 @@
       background-color: #428bca;
       -webkit-appearance: none;
     }
+</style>
 
-
-
-  </style>
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <!-- build:css styles/vendor.css -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+ <script src="/bower_components/modernizr/modernizr.js"></script>
+
   <!-- bower:css -->
   <!-- endbower -->
   <!-- endbuild -->
