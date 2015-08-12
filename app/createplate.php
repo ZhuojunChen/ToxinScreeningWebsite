@@ -30,13 +30,13 @@
 
   <body>
     <?php
-        $idnum = 1;
+        $platenum = 1;
         $getID = "SELECT MAX(plateID) + 1 as plateNum FROM plate";
         $getID = mysqli_query($con, $getID);
         $getID = mysqli_fetch_assoc($getID);
           
         if($getID['plateNum']) {
-          $idnum = $getID['plateNum'];
+          $platenum = $getID['plateNum'];
         }
          
         if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,23 +49,23 @@
           unset($_POST['chemical']);
           unset($_POST['run']);
 
-          $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid) VALUES ('$chemical', '$run', '$worm_type', '$day', '$idnum')";
+          $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid) VALUES ('$chemical', '$run', '$worm_type', '$day', '$platenum')";
           $select_id = mysqli_query($con, $query);
 
           if ($select_id) {
-            $rownum = "SELECT id FROM plate WHERE plateid = '$idnum'";
+            $rownum = "SELECT id FROM plate WHERE plateid = '$platenum'";
             $rownum = mysqli_query($con, $rownum);
             $rownum = mysqli_fetch_assoc($rownum);
             $rownum = $rownum['id'];
 
             $_SESSION['idnum'] = $rownum;
-            $_SESSION['platenum'] = $idnum;
+            $_SESSION['platenum'] = $platenum;
             echo "<script type='text/javascript'>
                 alert('Successful Plate Creation');    
                 window.location.href = 'printpage.php';
              </script>";
           } else {
-            echo "Error updating plate: " . mysqli_error($con);
+            echo "Error inserting plate: " . mysqli_error($con);
           }
         }
       ?>
@@ -81,7 +81,7 @@
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
-      <h1>Plate ID: <?php echo $idnum?></h1>
+      <h1>Plate ID: <?php echo $platenum?></h1>
 
   <label for="chemical">Chemical Name</label> 
   <form role="form" method="post" enctype="multipart/form-data">

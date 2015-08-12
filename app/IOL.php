@@ -50,7 +50,6 @@
         <h3 class="text-muted">toxin_screening</h3>
       </div>
 
-
       <?php 
       //initialize input
       //need to copy from pharynx
@@ -58,13 +57,13 @@
 
         //Set up file upload
         $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["IOLfile"]["name"]);
+        $target_file = $target_dir . basename($_FILES['IOLfile']['name']);
         $uploadOK = 1;
         $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
 
         //Make sure file does not exist 
         if(file_exists($target_file)){
-          echo "Sorry, file already exists. ";
+          echo "Sorry, :".$target_file.": file already exists. ";
           $uploadOK = 0;
         }
 

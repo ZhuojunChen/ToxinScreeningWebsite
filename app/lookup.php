@@ -42,7 +42,7 @@
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
-      <h1>Plate ID: <?php echo $_SESSION['idnum']?></h1>
+      <h1>Plate ID: <?php echo $_SESSION['platenum']?></h1>
 
   <label>Chemical</label><br>
   <div class="form-group">
@@ -95,8 +95,8 @@
   <label>Existing Entries</label>
   <br>
   <?php
-        $idnum = $_SESSION['idnum'];
-        $query = "SELECT worm_type, day FROM plate WHERE plateID = '$idnum' ORDER BY day";
+        $platenum = $_SESSION['platenum'];
+        $query = "SELECT worm_type, day FROM plate WHERE plateID = '$platenum' ORDER BY day";
         $select_id = mysqli_query($con, $query);
 
         while($row = mysqli_fetch_assoc($select_id)) {
@@ -111,12 +111,13 @@
         if($_SERVER["REQUEST_METHOD"] == "POST") {
           $worm_type = $_POST['worm_type'];
           $day = $_POST['day'];
-          
+          $_SESSION['platenum'] = $_SESSION['platenum'];
+
           unset($_POST['worm_type']);
           unset($_POST['day']);
           unset($_SESSION['idnum']);
 
-          $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$idnum'";
+          $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
           $select_id = mysqli_query($con, $query);
 
           if ($row = mysqli_fetch_assoc($select_id)) { 
@@ -129,10 +130,10 @@
             $chem = $_SESSION['chem'];
             
             $newRow = "INSERT INTO plate(chemical, run, worm_type, day, plateID) 
-                      VALUES('$chem', '$run', '$worm_type', '$day', '$idnum')";
+                      VALUES('$chem', '$run', '$worm_type', '$day', '$platenum')";
 
             if ($newRow = mysqli_query($con, $newRow)) {
-              $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$idnum'";
+              $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
               $select_id = mysqli_query($con, $query);
               $row = mysqli_fetch_assoc($select_id);
 

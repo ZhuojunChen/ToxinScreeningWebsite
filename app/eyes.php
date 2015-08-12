@@ -6,7 +6,6 @@
 <head>
 
   <style>
-
     .selectpicker {
       padding: -2px;
       color: #FFFFFF;
@@ -15,9 +14,6 @@
       background-color: #428bca;
       -webkit-appearance: none;
     }
-
-
-
   </style>
   <meta charset="utf-8">
   <meta name="description" content="">
@@ -62,7 +58,7 @@
             <li><a href="/behavior.php">Behavior</a></li>
             <li><a href="/imagepath.php">Image</a></li>
           </ul>
-          <h3 class="text-muted">toxin_screening</h3>
+          <h3 class="muted">toxin_screening</h3>
         </div>
 
         <h1>Eyes</h1>
@@ -89,7 +85,7 @@
            <td>
             <select class="selectpicker" data-style="btn-primary" name="A1" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -99,7 +95,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A2" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -109,7 +105,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A3" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -119,7 +115,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A4" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -129,7 +125,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A5" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -139,7 +135,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A6" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -149,7 +145,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A7" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -159,7 +155,7 @@
           <td>
             <select class="selectpicker" data-style="btn-primary" name="A8" required>
               <option value=""></option>
-              <option value='0'>0</option>
+              <option value='0'>0 straight</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -172,7 +168,7 @@
          <td>
           <select class="selectpicker" data-style="btn-primary" name="B1" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -182,7 +178,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B2" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -192,7 +188,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B3" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -202,7 +198,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B4" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -212,7 +208,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B5" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -222,7 +218,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B6" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -232,7 +228,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B7" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -242,7 +238,7 @@
         <td>
           <select class="selectpicker" data-style="btn-primary" name="B8" required>
             <option value=""></option>
-            <option value='0'>0</option>
+            <option value='0'>0 straight</option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -255,7 +251,7 @@
        <td>
         <select class="selectpicker" data-style="btn-primary" name="C1" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -265,7 +261,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C2" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -275,7 +271,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C3" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -285,7 +281,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C4" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -295,7 +291,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C5" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -305,7 +301,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C6" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -315,7 +311,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C7" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -325,7 +321,7 @@
       <td>
         <select class="selectpicker" data-style="btn-primary" name="C8" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -338,7 +334,7 @@
      <td>
       <select class="selectpicker" data-style="btn-primary" name="D1" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -348,7 +344,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D2" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -358,7 +354,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D3" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -368,7 +364,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D4" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -378,7 +374,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D5" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -388,7 +384,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D6" required>
           <option value=""></option>
-          <option value='0'>0</option>
+          <option value='0'>0 straight</option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -398,7 +394,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D7" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -408,7 +404,7 @@
     <td>
       <select class="selectpicker" data-style="btn-primary" name="D8" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -421,7 +417,7 @@
    <td>
     <select class="selectpicker" data-style="btn-primary" name="E1" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -431,7 +427,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E2" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -441,7 +437,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E3" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -451,7 +447,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E4" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -461,7 +457,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E5" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -471,7 +467,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E6" required>
         <option value=""></option>
-        <option value='0'>0</option>
+        <option value='0'>0 straight</option>
         <option value='1'>1</option>
         <option value='2'>2</option>
         <option value='3'>3</option>
@@ -481,7 +477,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E7" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -491,7 +487,7 @@
   <td>
     <select class="selectpicker" data-style="btn-primary" name="E8" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -504,7 +500,7 @@
  <td>
   <select class="selectpicker" data-style="btn-primary" name="F1" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -514,7 +510,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F2" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -524,7 +520,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F3" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -534,7 +530,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F4" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -544,7 +540,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F5" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -554,7 +550,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F6" required>
       <option value=""></option>
-      <option value='0'>0</option>
+      <option value='0'>0 straight</option>
       <option value='1'>1</option>
       <option value='2'>2</option>
       <option value='3'>3</option>
@@ -564,7 +560,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F7" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
@@ -574,7 +570,7 @@
 <td>
   <select class="selectpicker" data-style="btn-primary" name="F8" required>
     <option value=""></option>
-    <option value='0'>0</option>
+    <option value='0'>0 straight</option>
     <option value='1'>1</option>
     <option value='2'>2</option>
     <option value='3'>3</option>
