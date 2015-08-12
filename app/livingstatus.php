@@ -8,27 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+ <style>
+    .selectpicker {
+      padding: -2px;
+      color: #FFFFFF;
+      font-size: 12px;
+      width: 100%;
+      background-color: #428bca;
+      -webkit-appearance: none;
+    }
+  </style>
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+      <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap-select.css">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+
     <!-- endbuild -->
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
-     of text file preview via modal dialog -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-
-  
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -48,44 +52,521 @@
           <li><a href="/behavior.php">Behavior</a></li>
           <li><a href="/imagepath.php">Image</a></li>
         </ul>
-        <h3 class="text-muted">toxin_screening</h3>
+        <h3 class="muted">toxin_screening</h3>
     </div>
     <h1>Living Status</h1>
-  <form role="form" method="post" enctype="multipart/form-data">
-    <div class="container">
-      <div class="form-group">
-        <label for="livingstatus">Living Status</label>
-        <select name="livingstatus" type="text" class="form-control" required>
+    <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <p>Indicate all worm's living status.</p>
+
+        <!--The grid of buttons used to select for pharynx extension-->
+        <table style="width:100%">
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+        </tr>
+
+        <tr>
+           <th>A</th>
+           <td>
+            <select class="selectpicker" data-style="btn-primary" name="A1" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A2" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A3" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A4" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A5" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A6" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A7" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+
+          <td>
+            <select class="selectpicker" data-style="btn-primary" name="A8" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+         <th>B</th>
+         <td>
+          <select class="selectpicker" data-style="btn-primary" name="B1" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B2" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B3" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B4" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B5" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B6" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B7" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="B8" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+         <th>C</th>
+         <td>
+          <select class="selectpicker" data-style="btn-primary" name="C1" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C2" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C3" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C4" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C5" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C6" required>
+              <option value=""></option>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C7" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="selectpicker" data-style="btn-primary" name="C8" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+       <th>D</th>
+       <td>
+        <select class="selectpicker" data-style="btn-primary" name="D1" required>
           <option value=""></option>
-          <option value='1'>Alive</option>
-          <option value='0'>Dead</option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
         </select>
-      </div>
-      <div class="container" align="center">
-        <input type="submit" class="btn btn-md btn-success" id="submitBtn">
-        <input type="button" class="btn btn-md btn-primary" name="undo" value="Undo" disabled="true">
-      </div>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D2" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D3" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D4" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D5" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D6" required>
+            <option value=""></option>
+            <option value='0'>0</option>
+            <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D7" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D8" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+     <th>E</th>
+     <td>
+      <select class="selectpicker" data-style="btn-primary" name="E1" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E2" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E3" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E4" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E5" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E6" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E7" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E8" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+   <th>F</th>
+   <td>
+    <select class="selectpicker" data-style="btn-primary" name="F1" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F2" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F3" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F4" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F5" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F6" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F7" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F8" required>
+      <option value=""></option>
+      <option value='0'>0</option>
+      <option value='1'>1</option>
+    </select>
+  </td>
+  </tr>
+
+  </table>
+
+    <div class="container" align="center">
+      <p><input type="submit" class="btn btn-md btn-success" id="submitBtn"></p>
+    </div>
   </form>
-   <?php
-      if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $row_id = $_SESSION['idnum'];
-        
-        $status = $_POST['livingstatus'];
+  <?php
+  //initialize input variables
+  $string = "";
+  $row_id = $_SESSION['idnum'];
 
-        $query = "UPDATE plate SET living_status='$status' WHERE id=$row_id";
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (mysqli_query($con, $query)) {
-          echo nl2br("Updated plate successfully \n");
-        } else {
-          echo "Error updating plate: " . mysqli_error($con);
-        }
-        
-        echo "<script type='text/javascript'>
-          document.getElementById(\"submitBtn\").disabled = true;
-          document.getElementById(\"livingstat\").disabled = true;
-        </script>";
-      }
-    ?>
+  function test_input($data) {
+     $data = trim($data);
+     $data = stripslashes($data);
+     $data = htmlspecialchars($data);
+     return $data;
+  }
+
+    //Input for wells from checkboxes
+    //Row A
+    $string .= $_POST['A1'];
+    $string .= $_POST['A2'];
+    $string .= $_POST['A3'];
+    $string .= $_POST['A4'];
+    $string .= $_POST['A5'];
+    $string .= $_POST['A6'];
+    $string .= $_POST['A7'];
+    $string .= $_POST['A8'];
+
+    //Row B
+    $string .= $_POST['B1'];
+    $string .= $_POST['B2'];
+    $string .= $_POST['B3'];
+    $string .= $_POST['B4'];
+    $string .= $_POST['B5'];
+    $string .= $_POST['B6'];
+    $string .= $_POST['B7'];
+    $string .= $_POST['B8'];
+
+    //Row C
+    $string .= $_POST['C1'];
+    $string .= $_POST['C2'];
+    $string .= $_POST['C3'];
+    $string .= $_POST['C4'];
+    $string .= $_POST['C5'];
+    $string .= $_POST['C6'];
+    $string .= $_POST['C7'];
+    $string .= $_POST['C8'];
+
+    //Row D
+    $string .= $_POST['D1'];
+    $string .= $_POST['D2'];
+    $string .= $_POST['D3'];
+    $string .= $_POST['D4'];
+    $string .= $_POST['D5'];
+    $string .= $_POST['D6'];
+    $string .= $_POST['D7'];
+    $string .= $_POST['D8'];
+
+    //Row E
+    $string .= $_POST['E1'];
+    $string .= $_POST['E2'];
+    $string .= $_POST['E3'];
+    $string .= $_POST['E4'];
+    $string .= $_POST['E5'];
+    $string .= $_POST['E6'];
+    $string .= $_POST['E7'];
+    $string .= $_POST['E8'];
+
+    //Row F
+    $string .= $_POST['F1'];
+    $string .= $_POST['F2'];
+    $string .= $_POST['F3'];
+    $string .= $_POST['F4'];
+    $string .= $_POST['F5'];
+    $string .= $_POST['F6'];
+    $string .= $_POST['F7'];
+    $string .= $_POST['F8'];
+
+    $query = "UPDATE plate SET living_status='$string' WHERE id='$row_id'";
+
+    if (mysqli_query($con, $query)) {
+      echo nl2br("Updated plate successfully \n");
+    } else {
+      echo "Error updating plate: " . mysqli_error($con);
+    }
+    echo "<script type='text/javascript'>
+            document.getElementById(\"submitBtn\").disabled = true;
+          </script>";
+  }
+  ?> 
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

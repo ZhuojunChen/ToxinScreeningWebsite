@@ -49,6 +49,9 @@
       if(!empty($_SESSION['idnum'])) {
         unset($_SESSION['idnum']);
       }
+      if(!empty($_SESSION['platenum'])) {
+        unset($_SESSION['platenum']);
+      }
       if(!empty($_SESSION['chem'])) {
         unset($_SESSION['chem']);
       }
@@ -74,10 +77,10 @@
           // Should never be reached because of the bootstrap required form
           echo "<script type='text/javascript'>alert('Enter a valid integer!');</script>";
         } else {
-          $_SESSION['idnum'] = test_input($_POST["ID"]);
-          $idnum = $_SESSION['idnum'];
+          $_SESSION['platenum'] = test_input($_POST["ID"]);
+          $platenum = $_SESSION['platenum'];
           $query = "SELECT id, chemical, run FROM plate
-          WHERE plateID = '$idnum'";
+          WHERE plateID = '$platenum'";
 
           $select_id = mysqli_query($con, $query);
           

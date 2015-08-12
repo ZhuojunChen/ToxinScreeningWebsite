@@ -6,7 +6,6 @@
 <head>
 
   <style>
-
     .selectpicker {
       padding: -2px;
       color: #FFFFFF;
@@ -15,9 +14,6 @@
       background-color: #428bca;
       -webkit-appearance: none;
     }
-
-
-
   </style>
   <meta charset="utf-8">
   <meta name="description" content="">
@@ -62,7 +58,7 @@
       			<li><a href="/behavior.php">Behavior</a></li>
       			<li><a href="/imagepath.php">Image</a></li>
       		</ul>
-      		<h3 class="text-muted">toxin_screening</h3>
+      		<h3 class="muted">toxin_screening</h3>
       	</div>
 
       	<h1>Pharynx Extension</h1>
@@ -610,14 +606,7 @@ function test_input($data) {
         <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
         <script type="text/javascript" src="app/styles/bootstrap-select.js"></script>
         <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-          $(document).ready(function () {
-            $('.selectpicker').selectpicker({
-              style: 'btn-info',
-              size: 4
-            });
-          });
-        </script>
+
         <!-- endbuild -->
 
       	<!-- build:js scripts/main.js -->

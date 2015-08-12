@@ -6,7 +6,6 @@
 <head>
 
   <style>
-
     .selectpicker {
       padding: -2px;
       color: #FFFFFF;
@@ -15,9 +14,6 @@
       background-color: #428bca;
       -webkit-appearance: none;
     }
-
-
-
   </style>
   <meta charset="utf-8">
   <meta name="description" content="">
@@ -62,7 +58,7 @@
             <li><a href="/behavior.php">Behavior</a></li>
             <li><a href="/imagepath.php">Image</a></li>
           </ul>
-          <h3 class="text-muted">toxin_screening</h3>
+          <h3 class="muted">toxin_screening</h3>
         </div>
 
         <h1>Eyes</h1>

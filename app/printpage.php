@@ -1,4 +1,4 @@
-<?php session_start(); $idnum = 'http://barcode.tec-it.com/barcode.ashx?data='; $idnum .= $_SESSION['platenum']; unset($_SESSION['platenum']); $idnum .= '&code=Code128&dpi=72'?>
+<?php session_start(); $platenum = "http://www.barcodesinc.com/generator/image.php?code="; $platenum .= $_SESSION['platenum']; $platenum .= "&style=68&type=C128B&width=167&height=30&xres=1&font=3"?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
@@ -27,7 +27,14 @@
 		<!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
      of text file preview via modal dialog -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-
+    <style>
+      #cred
+      {
+        right:15px;
+        bottom:0px;
+        position:absolute;
+      }
+    </style>
   
   <body>
     <!--[if lt IE 10]>
@@ -56,40 +63,13 @@
  
 
     <h1>Print Barcode</h1>
-
-    <p>(Work in Progress)</p>
-
-    <table align="center">
-      <tr>
-        <td style='padding:10px; text-align:center; font-size:15px; font-family:Arial,Helvetica;'>
-          <a href='http://www.tec-it.com' title='Barcode Software by TEC-IT'>
-            <img src='http://www.tec-it.com/pics/banner/web/TEC-IT_Banner_120x42.gif' alt='Barcode Software by TEC-IT' border='0' />
-          </a>
-          <br/>
-          <a href='http://www.tec-it.com' title='Barcode Software by TEC-IT'>Barcode Software</a>
-        </td>
-        <td>
-          <img <?php echo "src='$idnum'";?> alt='Barcode Generator TEC-IT'/>
-        </td>
-      </tr>
-    </table>
-
-   <!--The file upload button-->
-
-
-   <!--Specify allowed file types
-   <script>
-	$("#phototaxis").fileinput({
-    allowedFileExtensions: ["jpg"]
-	});
-   </script>-->
-
-  
-   <br>
-        <div class="container" align="center">
-        	<p><input type="button" class="btn btn-md btn-success" value="Print"></p>
-        </div>
-
+    <p id="cred" align="right">Thanks to <a href="http://www.barcodesinc.com/generator/">http://www.barcodesinc.com/generator/</a> for the barcode generator.</p>
+    <!-- File Upload and Submit Form-->
+    <div class="container" align="center">
+      <img <?php echo "src='$platenum'";?> alt="Free barcode generator" border="0">
+      <br><?php echo "Barcode data: "." ".$_SESSION['platenum'];?><br><br>
+      <p><input type="button" class="btn btn-md btn-success" value="Print">
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
