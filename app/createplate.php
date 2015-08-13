@@ -39,11 +39,14 @@
         }
          
         if($_SERVER["REQUEST_METHOD"] == "POST") {
-          $run = $_POST['run'];
-          $chemical = $_POST['chemical'];
-          $worm_type = $_POST['worm_type'];
-          $day = $_POST['day'];
-          $date = $_POST['date'];
+          if(!empty($_POST['run']))
+            $run = $_POST['run'];
+          if(!empty($_POST['chemical']))
+            $chemical = $_POST['chemical'];
+          if(!empty($_POST['worm_type']))
+            $worm_type = $_POST['worm_type'];
+          if(!empty($_POST['day']))
+            $day = $_POST['day'];
 
           unset($_POST['chemical']);
           unset($_POST['run']);

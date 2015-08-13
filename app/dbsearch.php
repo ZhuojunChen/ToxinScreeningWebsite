@@ -113,6 +113,7 @@
 
 			<?php
 			$sql = "SELECT * FROM plate";
+
 			if ($_SERVER["REQUEST_METHOD"] == "GET"){
 
 				if(isset($_GET['plateID']) && !empty($_GET['plateID'])){
@@ -167,7 +168,7 @@
 
 			}
 
-
+			$sql .= " ORDER BY date DESC";
 
 			$result = mysqli_query($con, $sql);
 
