@@ -1,7 +1,6 @@
 <?php session_start(); date_default_timezone_set('America/Los_Angeles');?>
 <!doctype html>
 <?php require 'connection.php'; ?>
-<?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
 <html class="no-js" lang="">
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -19,7 +18,7 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +27,6 @@
      of text file preview via modal dialog -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
 
-  
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -36,9 +34,9 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="/index.php">Home</a></li>
-          <li><a href="/scanID.php">Plate Entry</a></li>
-          <li class="active"><a href="/lookup.php">Existing Plate</a></li>
+          <li><a href="./index.php">Home</a></li>
+          <li><a href="./scanID.php">Plate Entry</a></li>
+          <li class="active"><a href="./lookup.php">Existing Plate</a></li>
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
@@ -111,11 +109,9 @@
         if($_SERVER["REQUEST_METHOD"] == "POST") {
           $worm_type = $_POST['worm_type'];
           $day = $_POST['day'];
-          $_SESSION['platenum'] = $_SESSION['platenum'];
 
-          unset($_POST['worm_type']);
-          unset($_POST['day']);
-          unset($_SESSION['idnum']);
+          $_SESSION['worm_type'] = $worm_type;
+          $_SESSION['day'] = $day;
 
           $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
           $select_id = mysqli_query($con, $query);
@@ -124,28 +120,44 @@
             $_SESSION['day'] = $day;
             $_SESSION['idnum'] = $row['id'];
             $_SESSION['date'] = $_POST['date'];
-            echo "<meta http-equiv='refresh' content='0;livingstatus.php' />";
+            echo "<script type='text/javascript'>
+              if(confirm(\"Do you really want to overwite an existing entry?\"))
+                window.location.href = 'livingstatus.php';
+            </script>";
           } else {
-            $run = $_SESSION['run'];
-            $chem = $_SESSION['chem'];
-            
-            $newRow = "INSERT INTO plate(chemical, run, worm_type, day, plateID) 
-                      VALUES('$chem', '$run', '$worm_type', '$day', '$platenum')";
-
-            if ($newRow = mysqli_query($con, $newRow)) {
-              $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
-              $select_id = mysqli_query($con, $query);
-              $row = mysqli_fetch_assoc($select_id);
-
-              $_SESSION['idnum'] = $row['id'];
-              echo "<script type='text/javascript'>
-                    window.location.href = 'livingstatus.php';
-                  </script>";
-            } else {
-              echo "Error: ".mysqli_error($con);
-            }
-            
+            echo "<script type=\"text/javascript\">
+              if (confirm(\"Are you sure you want to create a new entry?\\nWorm Type: $worm_type \\nDay: $day\")) {
+                  window.location.href = 'lookup.php?act=create';
+              }
+            </script>";
           }
+        }
+      ?>
+
+      <?php
+        if($_GET['act'] == "create") {
+          $run = $_SESSION['run'];
+          $chem = $_SESSION['chem'];
+          $day = $_SESSION['day'];
+          $worm_type = $_SESSION['worm_type'];
+          $platenum = $_SESSION['platenum'];
+
+          $newRow = "INSERT INTO plate(chemical, run, worm_type, day, plateID) 
+                    VALUES('$chem', '$run', '$worm_type', '$day', '$platenum')";
+
+          if ($newRow = mysqli_query($con, $newRow)) {
+            $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
+            $select_id = mysqli_query($con, $query);
+            $row = mysqli_fetch_assoc($select_id);
+
+            $_SESSION['idnum'] = $row['id'];
+            echo "<script type='text/javascript'>
+                window.location.href = 'livingstatus.php';
+            </script>";
+          } else {
+            echo "Error: ".mysqli_error($con);
+          }
+          
         }
       ?>
 
@@ -161,23 +173,23 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->

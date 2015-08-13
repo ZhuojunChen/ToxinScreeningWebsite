@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
-<?php include("/Users/Yusef/Documents/Collins Lab/Toxin Screening Database/toxin_screening/app/password_protect.php"); ?>
 <html class="no-js" lang="">
 <head>
 
@@ -29,11 +28,11 @@
   <!-- build:css styles/ -->
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/styles/bootstrap-select.css">
-  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href=".bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- endbuild -->
 
   <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 
     <!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
@@ -47,16 +46,16 @@
       <div class="container">
         <div class="header">
           <ul class="nav nav-pills pull-right">
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/livingstatus.php">Living Status</a></li>
-            <li><a href="/pharynx.php">Pharynx</a></li>
-            <li><a href="/phototaxis.php">Phototaxis</a></li>
-            <li><a href="/thermotaxis.php">Thermotaxis</a></li>
-            <li><a href="/IOL.php">IOL</a></li>
-            <li><a href="/curvature.php">Curvature</a></li>   
-            <li class="active"><a href="/eyes.php">Eyes</a></li>
-            <li><a href="/behavior.php">Behavior</a></li>
-            <li><a href="/imagepath.php">Image</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a href="./livingstatus.php">Living Status</a></li>
+            <li><a href="./pharynx.php">Pharynx</a></li>
+            <li><a href="./phototaxis.php">Phototaxis</a></li>
+            <li><a href="./thermotaxis.php">Thermotaxis</a></li>
+            <li><a href="./IOL.php">IOL</a></li>
+            <li><a href="./curvature.php">Curvature</a></li>   
+            <li class="active"><a href="./eyes.php">Eyes</a></li>
+            <li><a href="./behavior.php">Behavior</a></li>
+            <li><a href="./imagepath.php">Image</a></li>
           </ul>
           <h3 class="muted">toxin_screening</h3>
         </div>
@@ -683,23 +682,23 @@ function test_input($data) {
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
         <script type="text/javascript" src="app/styles/bootstrap-select.js"></script>
         <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script>

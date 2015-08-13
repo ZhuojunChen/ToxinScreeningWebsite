@@ -17,7 +17,7 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="./bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="/index.php">Home</a></li>
+          <li><a href="./index.php">Home</a></li>
           <li><a href="">Living Status Visualization</a></li>
           <li><a href="">Pharynx Visualization</a></li>
           <li><a href="">Phototaxis Visualization</a></li>

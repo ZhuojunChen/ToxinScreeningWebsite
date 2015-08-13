@@ -1,13 +1,12 @@
 <!doctype html>
 <?php require 'connection.php'; ?>
-
 <html>
 
 <!-- DC Table Styles I CSS -->
 <head>
   <link rel="stylesheet" href="styles/main.css">
     <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <script src="./bower_components/modernizr/modernizr.js"></script>
   <!-- endbuild -->
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -65,9 +64,9 @@
 <body>
         <div class="header">
           <ul class="nav nav-pills pull-right">
-            <li><a href="/index.php">Home</a></li>
-            <li class="active"><a href="dbsearch.php">Data Search</a></li>
-            <li><a href="/scanID.php">Plate Entry</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li class="active"><a href="./dbsearch.php">Data Search</a></li>
+            <li><a href="./scanID.php">Plate Entry</a></li>
           </ul>
           <h3 class="text-muted">toxin_screening</h3>
         </div>
@@ -76,7 +75,6 @@
 	<table class="zui-table zui-table-zebra zui-table-horizontal">
 		<thead>
 			<tr> 
-				<th>  id </th>
 				<th> plate id </th>
 				<th> chemical </th>
 				<th> run </th>
@@ -96,7 +94,6 @@
 		<tbody>
 			<form role="form" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<tr>
-					<td> <input type="search" name="id" style="width: 50px;"> </td>
 					<td> <input type="search" name="plate_id" style="width: 50px;"> </td>
 					<td> <input type="search" name="chemical"> </td>
 					<td> <input  type="search" name="run" style="width: 35px;"> </td>
@@ -117,16 +114,6 @@
 			<?php
 			$sql = "SELECT * FROM plate";
 			if ($_SERVER["REQUEST_METHOD"] == "GET"){
-
-				$id = $_GET['id'];
-				if(!empty("$id")){
-					if (strpos($sql,'WHERE') !== false) {
-						$sql .= " AND id='$id'";
-					}
-					else{
-						$sql .= " WHERE id='$id'";
-					}
-				}
 
 				$plateID = $_GET['plateID'];
 				if(!empty("$plateID")){
@@ -192,10 +179,6 @@
 					$IOLtrailing = basename($IOLfile);
 
 					echo "<tr>" 
-
-					. "<td>" 
-					. $row["id"] 
-					. "</td>" 
 
 					. "<td>"
 					. $row["plateID"]
