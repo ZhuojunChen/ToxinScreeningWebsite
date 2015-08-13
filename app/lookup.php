@@ -135,7 +135,7 @@
       ?>
 
       <?php
-        if($_GET['act'] == "create") {
+        if(isset($_GET['act']) && ($_GET['act'] == "create")) {
           $run = $_SESSION['run'];
           $chem = $_SESSION['chem'];
           $day = $_SESSION['day'];
@@ -152,7 +152,7 @@
 
             $_SESSION['idnum'] = $row['id'];
             echo "<script type='text/javascript'>
-                window.location.href = 'livingstatus.php';
+                window.location.href = 'printpage.php';
             </script>";
           } else {
             echo "Error: ".mysqli_error($con);
