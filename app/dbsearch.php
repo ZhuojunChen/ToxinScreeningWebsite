@@ -115,8 +115,8 @@
 			$sql = "SELECT * FROM plate";
 			if ($_SERVER["REQUEST_METHOD"] == "GET"){
 
-				$plateID = $_GET['plateID'];
-				if(!empty("$plateID")){
+				if(isset($_GET['$plateID'])){
+					$plateID = $_GET['plateID'];
 					if (strpos($sql,'WHERE') !== false) {
 						$sql .= " AND plateID='$plateID'";
 					}
@@ -125,8 +125,8 @@
 					}
 				}
 
-				$chemical = $_GET['chemical'];
-				if(!empty("$chemical")){
+				if(isset($_GET['$chemical'])){
+					$chemical = $_GET['chemical'];
 					if (strpos($sql,'WHERE') !== false) {
 						$sql .= " AND chemical='$chemical'";
 					}
@@ -135,8 +135,8 @@
 					}
 				}
 
-				$run = $_GET['run'];
-				if(!empty("$run")){
+				if(isset($_GET['$run'])){
+					$run = $_GET['run'];
 					if (strpos($sql,'WHERE') !== false) {
 						$sql .= " AND run='$run'";
 					}
@@ -145,8 +145,8 @@
 					}
 				}
 
-				$worm_type = $_GET['worm_type'];
-				if(!empty("$worm_type")){
+				if(isset($_GET['$worm_type'])){
+					$worm_type = $_GET['worm_type'];
 					if (strpos($sql,'WHERE') !== false) {
 						$sql .= " AND worm_type='$worm_type'";
 					}
@@ -155,8 +155,8 @@
 					}
 				}
 
-				$day = $_GET['day'];
-				if(!empty("$day")){
+				if(isset($_GET['$day'])){
+					$day = $_GET['day'];
 					if (strpos($sql,'WHERE') !== false) {
 						$sql .= " AND day='$day'";
 					}
