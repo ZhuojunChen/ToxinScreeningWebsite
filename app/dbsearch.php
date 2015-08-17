@@ -101,10 +101,10 @@
 					<td> <input  type="search" name="day" style="width: 45px;"> </td>
 					<td> /48 </td>
 					<td> /48 </td>
-					<td> /48 </td>
-					<td> /48 </td>
-					<td> /48 </td>
-					<td> /48 </td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>0:Straight <br> 1:Stub <br> 2:C Shape <br> 3:Corkscrew </td>
 					<td> 0s 1s 2s 3s  </td>				
 					<td></td>						
 				</tr>
@@ -176,6 +176,7 @@
     // output data of each row
 				while($row = mysqli_fetch_assoc($result)) {
 					$eyes = $row["eyes"];
+					$curvature = $row["curvature"];
 					$IOLfile = $row["IOL"];
 					$IOLtrailing = basename($IOLfile);
 
@@ -206,7 +207,7 @@
 					."</td>"
 
 					."<td>" 
-					. $row["living_status"] 
+					. array_sum(str_split($row["living_status"]))
 					."</td>"
 
 					."<td>" 
@@ -222,7 +223,13 @@
 					."</td>" 
 
 					."<td>" 
-					. $row["curvature"] 
+					. substr_count("$curvature","0")
+					. " "
+					. substr_count("$curvature","1")
+					. " "
+					. substr_count("$curvature","2")
+					. " "
+					. substr_count("$curvature","3")
 					."</td>"
 
 					."<td>" 
