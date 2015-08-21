@@ -1,7 +1,7 @@
 <?php session_start(); 
   $platenum = "http://www.barcodesinc.com/generator/image.php?code=";
   $platenum .= $_SESSION['platenum'];
-  $platenum .= "&style=68&type=C128B&width=167&height=30&xres=1&font=3"?>
+  $platenum .= "&style=68&type=C128B&width=90&height=30&xres=1&font=3"?>
 
 <!doctype html>
 <?php require 'connection.php'; ?>
@@ -53,14 +53,60 @@
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
+<script>
+// Printing Script Credit: http://www.boutell.com/newfaq/creating/printpart.html
+function makepage(src)
+{
+  // We break the closing script tag in half to prevent
+  // the HTML parser from seeing it as a part of
+  // the *main* page.
+
+  return "<html>\n" +
+    "<head>\n" +
+    "<title>Temporary Printing Window</title>\n" +
+    "<script>\n" +
+    "function step1() {\n" +
+    "  setTimeout('step2()', 10);\n" +
+    "}\n" +
+    "function step2() {\n" +
+    "  window.print();\n" +
+    "  window.close();\n" +
+    "}\n" +
+    "</scr" + "ipt>\n" +
+    "</head>\n" +
+    "<body onLoad='step1()'>\n" +
+    "<img src='" + src + "'/>\n" +
+    "</body>\n" +
+    "</html>\n";
+}
+
+function printme(evt)
+{
+  if (!evt) {
+    // Old IE
+    evt = window.event;
+  }    
+  var image = evt.target;
+  if (!image) {
+    // Old IE
+    image = window.event.srcElement;
+  }
+  src = image.src;
+  link = "about:blank";
+  var pw = window.open(link, "_new");
+  pw.document.open();
+  pw.document.write(makepage(src));
+  pw.document.close();
+}
+</script>
 
     <h1>Print Barcode</h1>
     <p id="cred" align="right">Thanks to <a href="http://www.barcodesinc.com/generator/">http://www.barcodesinc.com/generator/</a> for the barcode generator.</p>
     <!-- File Upload and Submit Form-->
     <div class="container" align="center">
-      <img <?php echo "src='$platenum'";?> alt="Free barcode generator" border="0">
+      <img <?php echo "src='$platenum'";?> alt="Free barcode generator" border="0" id="image" onclick="printme(event)">
       <br><?php echo "Barcode data: "." ".$_SESSION['platenum'];?><br><br>
-    	<p><input type="button" class="btn btn-md btn-success" value="Print">
+    	<p><input type="button" class="btn btn-md btn-success" value="Print" onclick="$('#image').click()">
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
