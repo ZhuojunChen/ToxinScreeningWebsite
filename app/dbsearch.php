@@ -94,7 +94,7 @@
 		<tbody>
 			<form role="form" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<tr>
-					<td> <input type="search" name="plate_id" style="width: 50px;"> </td>
+					<td> <input type="search" name="plateID" style="width: 50px;"> </td>
 					<td> <input type="search" name="chemical"> </td>
 					<td> <input  type="search" name="run" style="width: 35px;"> </td>
 					<td> <input  type="search" name="worm_type" style="width: 60px;"> </td>

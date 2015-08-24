@@ -36,9 +36,9 @@
   <!-- endbuild -->
 
     <!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
-   of text file preview via modal dialog -->
- </head>  
- <body>
+    of text file preview via modal dialog -->
+  </head>  
+  <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -67,22 +67,89 @@
 
       		<!--The grid of buttons used to select for pharynx extension-->
           <table style="width:100%">
-          <tr>
-            <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
+            <tr>
+              <th></th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+            </tr>
+
+            <tr>
+             <th>A</th>
+             <td>
+              <select class="selectpicker" data-style="btn-primary" name="A1" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A2" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A3" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A4" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A5" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A6" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A7" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
+
+            <td>
+              <select class="selectpicker" data-style="btn-primary" name="A8" required>
+                <option value=""></option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+              </select>
+            </td>
           </tr>
 
           <tr>
-           <th>A</th>
+           <th>B</th>
            <td>
-            <select class="selectpicker" data-style="btn-primary" name="A1" required>
+            <select class="selectpicker" data-style="btn-primary" name="B1" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -90,7 +157,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A2" required>
+            <select class="selectpicker" data-style="btn-primary" name="B2" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -98,7 +165,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A3" required>
+            <select class="selectpicker" data-style="btn-primary" name="B3" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -106,7 +173,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A4" required>
+            <select class="selectpicker" data-style="btn-primary" name="B4" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -114,7 +181,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A5" required>
+            <select class="selectpicker" data-style="btn-primary" name="B5" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -122,7 +189,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A6" required>
+            <select class="selectpicker" data-style="btn-primary" name="B6" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -130,7 +197,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A7" required>
+            <select class="selectpicker" data-style="btn-primary" name="B7" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -138,7 +205,7 @@
           </td>
 
           <td>
-            <select class="selectpicker" data-style="btn-primary" name="A8" required>
+            <select class="selectpicker" data-style="btn-primary" name="B8" required>
               <option value=""></option>
               <option value='0'>0</option>
               <option value='1'>1</option>
@@ -147,9 +214,9 @@
         </tr>
 
         <tr>
-         <th>B</th>
+         <th>C</th>
          <td>
-          <select class="selectpicker" data-style="btn-primary" name="B1" required>
+          <select class="selectpicker" data-style="btn-primary" name="C1" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -157,7 +224,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B2" required>
+          <select class="selectpicker" data-style="btn-primary" name="C2" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -165,7 +232,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B3" required>
+          <select class="selectpicker" data-style="btn-primary" name="C3" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -173,7 +240,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B4" required>
+          <select class="selectpicker" data-style="btn-primary" name="C4" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -181,7 +248,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B5" required>
+          <select class="selectpicker" data-style="btn-primary" name="C5" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -189,7 +256,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B6" required>
+          <select class="selectpicker" data-style="btn-primary" name="C6" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -197,7 +264,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B7" required>
+          <select class="selectpicker" data-style="btn-primary" name="C7" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -205,7 +272,7 @@
         </td>
 
         <td>
-          <select class="selectpicker" data-style="btn-primary" name="B8" required>
+          <select class="selectpicker" data-style="btn-primary" name="C8" required>
             <option value=""></option>
             <option value='0'>0</option>
             <option value='1'>1</option>
@@ -214,9 +281,9 @@
       </tr>
 
       <tr>
-       <th>C</th>
+       <th>D</th>
        <td>
-        <select class="selectpicker" data-style="btn-primary" name="C1" required>
+        <select class="selectpicker" data-style="btn-primary" name="D1" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -224,7 +291,7 @@
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary" name="C2" required>
+        <select class="selectpicker" data-style="btn-primary" name="D2" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -232,7 +299,7 @@
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary" name="C3" required>
+        <select class="selectpicker" data-style="btn-primary" name="D3" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -240,7 +307,7 @@
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary" name="C4" required>
+        <select class="selectpicker" data-style="btn-primary" name="D4" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -248,7 +315,7 @@
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary" name="C5" required>
+        <select class="selectpicker" data-style="btn-primary" name="D5" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -256,15 +323,7 @@
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary" name="C6" required>
-            <option value=""></option>
-            <option value='0'>0</option>
-            <option value='1'>1</option>
-        </select>
-      </td>
-
-      <td>
-        <select class="selectpicker" data-style="btn-primary" name="C7" required>
+        <select class="selectpicker" data-style="btn-primary" name="D6" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -272,7 +331,15 @@
       </td>
 
       <td>
-        <select class="selectpicker" data-style="btn-primary" name="C8" required>
+        <select class="selectpicker" data-style="btn-primary" name="D7" required>
+          <option value=""></option>
+          <option value='0'>0</option>
+          <option value='1'>1</option>
+        </select>
+      </td>
+
+      <td>
+        <select class="selectpicker" data-style="btn-primary" name="D8" required>
           <option value=""></option>
           <option value='0'>0</option>
           <option value='1'>1</option>
@@ -281,9 +348,9 @@
     </tr>
 
     <tr>
-     <th>D</th>
+     <th>E</th>
      <td>
-      <select class="selectpicker" data-style="btn-primary" name="D1" required>
+      <select class="selectpicker" data-style="btn-primary" name="E1" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -291,7 +358,7 @@
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary" name="D2" required>
+      <select class="selectpicker" data-style="btn-primary" name="E2" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -299,7 +366,7 @@
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary" name="D3" required>
+      <select class="selectpicker" data-style="btn-primary" name="E3" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -307,7 +374,7 @@
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary" name="D4" required>
+      <select class="selectpicker" data-style="btn-primary" name="E4" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -315,7 +382,7 @@
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary" name="D5" required>
+      <select class="selectpicker" data-style="btn-primary" name="E5" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -323,15 +390,7 @@
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary" name="D6" required>
-          <option value=""></option>
-          <option value='0'>0</option>
-          <option value='1'>1</option>
-      </select>
-    </td>
-
-    <td>
-      <select class="selectpicker" data-style="btn-primary" name="D7" required>
+      <select class="selectpicker" data-style="btn-primary" name="E6" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -339,7 +398,15 @@
     </td>
 
     <td>
-      <select class="selectpicker" data-style="btn-primary" name="D8" required>
+      <select class="selectpicker" data-style="btn-primary" name="E7" required>
+        <option value=""></option>
+        <option value='0'>0</option>
+        <option value='1'>1</option>
+      </select>
+    </td>
+
+    <td>
+      <select class="selectpicker" data-style="btn-primary" name="E8" required>
         <option value=""></option>
         <option value='0'>0</option>
         <option value='1'>1</option>
@@ -348,9 +415,9 @@
   </tr>
 
   <tr>
-   <th>E</th>
+   <th>F</th>
    <td>
-    <select class="selectpicker" data-style="btn-primary" name="E1" required>
+    <select class="selectpicker" data-style="btn-primary" name="F1" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
@@ -358,7 +425,7 @@
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary" name="E2" required>
+    <select class="selectpicker" data-style="btn-primary" name="F2" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
@@ -366,7 +433,7 @@
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary" name="E3" required>
+    <select class="selectpicker" data-style="btn-primary" name="F3" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
@@ -374,7 +441,7 @@
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary" name="E4" required>
+    <select class="selectpicker" data-style="btn-primary" name="F4" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
@@ -382,7 +449,7 @@
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary" name="E5" required>
+    <select class="selectpicker" data-style="btn-primary" name="F5" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
@@ -390,15 +457,7 @@
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary" name="E6" required>
-        <option value=""></option>
-        <option value='0'>0</option>
-        <option value='1'>1</option>
-    </select>
-  </td>
-
-  <td>
-    <select class="selectpicker" data-style="btn-primary" name="E7" required>
+    <select class="selectpicker" data-style="btn-primary" name="F6" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
@@ -406,86 +465,28 @@
   </td>
 
   <td>
-    <select class="selectpicker" data-style="btn-primary" name="E8" required>
+    <select class="selectpicker" data-style="btn-primary" name="F7" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
     </select>
   </td>
-</tr>
 
-<tr>
- <th>F</th>
- <td>
-  <select class="selectpicker" data-style="btn-primary" name="F1" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F2" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F3" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F4" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F5" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F6" required>
+  <td>
+    <select class="selectpicker" data-style="btn-primary" name="F8" required>
       <option value=""></option>
       <option value='0'>0</option>
       <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F7" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
-
-<td>
-  <select class="selectpicker" data-style="btn-primary" name="F8" required>
-    <option value=""></option>
-    <option value='0'>0</option>
-    <option value='1'>1</option>
-  </select>
-</td>
+    </select>
+  </td>
 </tr>
 
 </table>
 
-	<div class="container" align="center">
-		<p><input type="submit" class="btn btn-md btn-success" id="submitBtn"></p>
-	</div>
+<div class="container" align="center">
+  <p><input type="submit" class="btn btn-md btn-success" name="submit" value="submit">
+    <input type="submit" class="btn btn-md btn-success" name="undo" value="undo" style="width="20px";"></p>
+  </div>
 </form>
 <?php
 //initialize input variables
@@ -493,105 +494,128 @@ $string = "";
 $row_id = $_SESSION['idnum'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ $result = mysqli_query($con,"SELECT * FROM plate WHERE id='$row_id'");
+ while($row = mysqli_fetch_array($result))
+ {
+  $prev = $row['pharynx'];
+}
 
-function test_input($data) {
+if ( isset( $_POST['submit'] ) ) { 
+
+  function test_input($data) {
    $data = trim($data);
    $data = stripslashes($data);
    $data = htmlspecialchars($data);
    return $data;
-}
+ }
 
   //Input for wells from checkboxes
   //Row A
-  $string .= $_POST['A1'];
-  $string .= $_POST['A2'];
-  $string .= $_POST['A3'];
-  $string .= $_POST['A4'];
-  $string .= $_POST['A5'];
-  $string .= $_POST['A6'];
-  $string .= $_POST['A7'];
-  $string .= $_POST['A8'];
+ $string .= $_POST['A1'];
+ $string .= $_POST['A2'];
+ $string .= $_POST['A3'];
+ $string .= $_POST['A4'];
+ $string .= $_POST['A5'];
+ $string .= $_POST['A6'];
+ $string .= $_POST['A7'];
+ $string .= $_POST['A8'];
 
   //Row B
-  $string .= $_POST['B1'];
-  $string .= $_POST['B2'];
-  $string .= $_POST['B3'];
-  $string .= $_POST['B4'];
-  $string .= $_POST['B5'];
-  $string .= $_POST['B6'];
-  $string .= $_POST['B7'];
-  $string .= $_POST['B8'];
+ $string .= $_POST['B1'];
+ $string .= $_POST['B2'];
+ $string .= $_POST['B3'];
+ $string .= $_POST['B4'];
+ $string .= $_POST['B5'];
+ $string .= $_POST['B6'];
+ $string .= $_POST['B7'];
+ $string .= $_POST['B8'];
 
   //Row C
-  $string .= $_POST['C1'];
-  $string .= $_POST['C2'];
-  $string .= $_POST['C3'];
-  $string .= $_POST['C4'];
-  $string .= $_POST['C5'];
-  $string .= $_POST['C6'];
-  $string .= $_POST['C7'];
-  $string .= $_POST['C8'];
+ $string .= $_POST['C1'];
+ $string .= $_POST['C2'];
+ $string .= $_POST['C3'];
+ $string .= $_POST['C4'];
+ $string .= $_POST['C5'];
+ $string .= $_POST['C6'];
+ $string .= $_POST['C7'];
+ $string .= $_POST['C8'];
 
   //Row D
-  $string .= $_POST['D1'];
-  $string .= $_POST['D2'];
-  $string .= $_POST['D3'];
-  $string .= $_POST['D4'];
-  $string .= $_POST['D5'];
-  $string .= $_POST['D6'];
-  $string .= $_POST['D7'];
-  $string .= $_POST['D8'];
+ $string .= $_POST['D1'];
+ $string .= $_POST['D2'];
+ $string .= $_POST['D3'];
+ $string .= $_POST['D4'];
+ $string .= $_POST['D5'];
+ $string .= $_POST['D6'];
+ $string .= $_POST['D7'];
+ $string .= $_POST['D8'];
 
   //Row E
-  $string .= $_POST['E1'];
-  $string .= $_POST['E2'];
-  $string .= $_POST['E3'];
-  $string .= $_POST['E4'];
-  $string .= $_POST['E5'];
-  $string .= $_POST['E6'];
-  $string .= $_POST['E7'];
-  $string .= $_POST['E8'];
+ $string .= $_POST['E1'];
+ $string .= $_POST['E2'];
+ $string .= $_POST['E3'];
+ $string .= $_POST['E4'];
+ $string .= $_POST['E5'];
+ $string .= $_POST['E6'];
+ $string .= $_POST['E7'];
+ $string .= $_POST['E8'];
 
   //Row F
-  $string .= $_POST['F1'];
-  $string .= $_POST['F2'];
-  $string .= $_POST['F3'];
-  $string .= $_POST['F4'];
-  $string .= $_POST['F5'];
-  $string .= $_POST['F6'];
-  $string .= $_POST['F7'];
-  $string .= $_POST['F8'];
+ $string .= $_POST['F1'];
+ $string .= $_POST['F2'];
+ $string .= $_POST['F3'];
+ $string .= $_POST['F4'];
+ $string .= $_POST['F5'];
+ $string .= $_POST['F6'];
+ $string .= $_POST['F7'];
+ $string .= $_POST['F8'];
 
-  $query = "UPDATE plate SET pharynx='$string' WHERE id='$row_id'";
+ $query = "UPDATE plate SET pharynx='$string' WHERE id='$row_id'";
 
-  if (mysqli_query($con, $query)) {
-    echo nl2br("Updated plate successfully \n");
+if (mysqli_query($con, $query)) {
+  echo nl2br("Updated plate successfully \n");
+} else {
+  echo "Error updating plate: " . mysqli_error($con);
+}
+}
+
+  if(isset($_POST['undo']) ) {
+  $undo_query = "UPDATE plate SET pharynx='$prev' WHERE id='$row_id'";
+  if (mysqli_query($con, $undo_query)) {
+    echo nl2br("Undid plate successfully \n");
   } else {
-    echo "Error updating plate: " . mysqli_error($con);
+    echo "Error undoing plate: " . mysqli_error($con);
   }
-  echo "<script type='text/javascript'>
+}
+
+}
+
+
+
+
+  /* echo "<script type='text/javascript'>
           document.getElementById(\"submitBtn\").disabled = true;
         </script>";
-}
-?> 
-      	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-      	<script>
-      		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      		e.src='//www.google-analytics.com/analytics.js';
-      		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      		ga('create','UA-XXXXX-X');ga('send','pageview');
-      	</script>
+        */
+        ?> 
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+           function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
 
-      	<!-- build:js scripts/vendor.js -->
-      	<!-- bower:js -->
-      	<script src="bower_components/jquery/dist/jquery.js"></script>
-      	<!-- endbower -->
-      	<!-- endbuild -->
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
-      	<!-- build:js scripts/plugins.js -->
-      	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
         <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
         <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
         <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
@@ -608,8 +632,8 @@ function test_input($data) {
 
         <!-- endbuild -->
 
-      	<!-- build:js scripts/main.js -->
-      	<!-- <script src="scripts/main.js"></script> -->
-      	<!-- endbuild -->
+        <!-- build:js scripts/main.js -->
+        <!-- <script src="scripts/main.js"></script> -->
+        <!-- endbuild -->
       </body>
       </html>
