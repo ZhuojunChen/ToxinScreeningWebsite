@@ -62,6 +62,7 @@ function makepage(src)
   // the *main* page.
 
   return "<html>\n" +
+    "<style>#bar{\nposition: relative;\ntop: -1%;\nleft: -3%;\n}</style>\n" +
     "<head>\n" +
     "<title>Temporary Printing Window</title>\n" +
     "<script>\n" +
@@ -75,7 +76,7 @@ function makepage(src)
     "</scr" + "ipt>\n" +
     "</head>\n" +
     "<body onLoad='step1()'>\n" +
-    "<img src='" + src + "'/>\n" +
+    "<img id='bar' src='" + src + "'/>\n" +
     "</body>\n" +
     "</html>\n";
 }
