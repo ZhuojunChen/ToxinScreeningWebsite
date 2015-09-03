@@ -119,7 +119,7 @@
           if ($row = mysqli_fetch_assoc($select_id)) { 
             $_SESSION['day'] = $day;
             $_SESSION['idnum'] = $row['id'];
-            $_SESSION['date'] = $_POST['date'];
+
             echo "<script type='text/javascript'>
               if(confirm(\"Do you really want to overwite an existing entry?\"))
                 window.location.href = 'livingstatus.php';
