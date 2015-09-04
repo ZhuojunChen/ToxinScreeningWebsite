@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
 <html class="no-js" lang="">
@@ -50,28 +51,68 @@
       </div>
 
 
- 
+       <?php 
+      //initialize input
+      //need to copy from pharynx
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        //Set up file upload
+        $target_dir = "uploads/thermotaxis/";
+        $target_file = $target_dir . basename($_FILES['thermotaxisFile']['name']);
+        $uploadOK = 1;
+        $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
+
+        //Make sure file does not exist 
+        if(file_exists($target_file)){
+          echo "Sorry, :".$target_file.": file already exists. ";
+          $uploadOK = 0;
+        }
+
+        //TO DO: Limit file type
+        //Check if file is allowed to be uploaded
+        if($uploadOK == 0){
+          echo "Your file was not uploaded.";
+        }
+
+        //If so, upload file
+        else if($uploadOK = 1) {
+          if(move_uploaded_file($_FILES["thermotaxisFile"]["tmp_name"], $target_file)) {
+            echo "The file ". basename($_FILES["thermotaxisFile"]["name"]) . " has been uploaded." . "<br>";
+
+            $row_id = $_SESSION['idnum'];
+            $query = "UPDATE plate SET thermotaxis='$target_file' WHERE id='$row_id'";
+
+            if (mysqli_query($con, $query)) {
+              echo nl2br("Updated plate successfully \n");
+            } else {
+              echo "Error updating plate: " . mysqli_error($con);
+            }
+            //Open the file
+          //  $IOLfile = fopen("uploads/temp_file", "r"); 
+          //  echo fread($IOLfile, filesize("temp/temp_file"));
+          //  fclose($IOLfile);
+          //  unlink("temp/temp_file");
+          } 
+          else {
+            echo "There was an error uploading your file";
+          }
+        }
+      }
+      ?> 
 
     <h1>Thermotaxis</h1>
-<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <p>Please upload the matlab file with the thermotaxis information</p>
+        <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
+          enctype="multipart/form-data">    <p>Please upload the matlab file with the thermotaxis information</p>
 
    <!--The file upload button-->
-     <input id="thermotaxis" type="file" class="file">
+          <input name="thermotaxisFile" type="file" class="file">
 
 
-   <!--Specify allowed file types
-   <script>
-	$("#phototaxis").fileinput({
-    allowedFileExtensions: ["jpg"]
-	});
-   </script>-->
 
-  
 
-        <div class="container" align="center">
-        	<p><a class="btn btn-md btn-success" href="http://google.com">Submit</a></p>
-        </div>
+          <div class="container" align="center">
+            <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
+          </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

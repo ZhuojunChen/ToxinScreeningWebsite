@@ -96,12 +96,6 @@
             echo "There was an error uploading your file";
           }
         }
-        //Convert the file
-     //   $command="uptime"; $output; $retval; $errors="";
-       // exec ( $command ,  &$output, &$retval  );
-        //echo $output[0]."\n";
-       // unset($output);
-
       }
       ?> 
 

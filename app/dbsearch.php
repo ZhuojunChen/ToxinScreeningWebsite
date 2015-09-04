@@ -43,8 +43,8 @@
 			background-color: #EEF7EE;
 		}
 		.zui-table-horizontal tbody td {
-			border-left: none;
-			border-right: none;
+			border-left: 1px solid #000;
+			border-right: 1 px solid #000;
 		}
 
 		label{
@@ -177,8 +177,18 @@
 				while($row = mysqli_fetch_assoc($result)) {
 					$eyes = $row["eyes"];
 					$curvature = $row["curvature"];
+
 					$IOLfile = $row["IOL"];
 					$IOLtrailing = basename($IOLfile);
+
+					$phototaxisFile = $row["phototaxis"];
+					$phototaxisTrailing = basename($phototaxisFile);
+
+					$thermotaxisFile = $row["thermotaxis"];
+					$thermotaxisTrailing = basename($thermotaxisFile);
+
+					$image = $row["image"];
+					$imageTrailing = basename($image);
 
 					echo "<tr>" 
 
@@ -211,11 +221,11 @@
 					."</td>"
 
 					."<td>" 
-					. $row["phototaxis"] 
+					."<a href='$phototaxisFile'>$phototaxisTrailing</a>"
 					."</td>"
 
 					."<td>" 
-					. $row["thermotaxis"] 
+					."<a href='$thermotaxisFile'>$thermotaxisTrailing</a>"
 					."</td>"    
 
 					."<td>" 
