@@ -62,7 +62,7 @@ function makepage(src)
   // the *main* page.
 
   return "<html>\n" +
-    "<style>#bar{\nposition: relative;\ntop: -1%;\nleft: -2%;\n}</style>\n" +
+    "<style>#bar{\nposition: relative;\ntop: -15%;\nleft: 3%;\n}</style>\n" +
     "<head>\n" +
     "<title>Temporary Printing Window</title>\n" +
     "<script>\n" +

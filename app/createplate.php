@@ -47,13 +47,14 @@
             $worm_type = $_POST['worm_type'];
           if(!empty($_POST['day']))
             $day = $_POST['day'];
-
+          if(!empty($_POST['date']))
+            $date = $_POST['date'];
           unset($_POST['chemical']);
           unset($_POST['run']);
 
-          $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid) VALUES ('$chemical', '$run', '$worm_type', '$day', '$platenum')";
+          $query = "INSERT INTO plate (chemical, run, worm_type, day, plateid, date) VALUES ('$chemical', '$run', '$worm_type', '$day', '$platenum', '$date')";
           $select_id = mysqli_query($con, $query);
-
+          
           if ($select_id) {
             $rownum = "SELECT id FROM plate WHERE plateid = '$platenum'";
             $rownum = mysqli_query($con, $rownum);
@@ -69,6 +70,7 @@
           } else {
             echo "Error inserting plate: " . mysqli_error($con);
           }
+          
         }
       ?>
     <!--[if lt IE 10]>
@@ -123,7 +125,7 @@
   <div class="form-group">
     <label for="date">Entry Date</label>
     <span class="error"><?php //echo $dateErr;?></span>
-    <input type="date" class="form-control" name="date" disabled='true' value='<?php echo date('Y-m-d'); ?>'>
+    <input type="date" class="form-control" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required>
   </div> 
   <div class="container" align="center">
   	  <p><input type="submit" class="btn btn-md btn-success" name="submit"></p>
@@ -132,7 +134,6 @@
   <br>
   <label>New Plate Entry.</label>
   <br>
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

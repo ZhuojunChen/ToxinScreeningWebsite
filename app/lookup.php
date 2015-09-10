@@ -82,7 +82,7 @@
   <div class="form-group">
     <label for="date">Today's Date</label>
     <span class="error"><?php //echo $dateErr;?></span>
-    <input type="date" class="form-control" name="date" disabled='true' value='<?php echo date('Y-m-d'); ?>'>
+    <input type="date" class="form-control" name="date" value='<?php echo date('Y-m-d'); ?>' required>
   </div> 
   <div class="container" align="center">
   	  <p><input type="submit" class="btn btn-md btn-success" name="submit">
@@ -109,10 +109,10 @@
         if($_SERVER["REQUEST_METHOD"] == "POST") {
           $worm_type = $_POST['worm_type'];
           $day = $_POST['day'];
-
+          $date = $_POST['date'];
           $_SESSION['worm_type'] = $worm_type;
           $_SESSION['day'] = $day;
-
+          $_SESSION['date'] = $date;
           $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
           $select_id = mysqli_query($con, $query);
 
@@ -121,12 +121,12 @@
             $_SESSION['idnum'] = $row['id'];
 
             echo "<script type='text/javascript'>
-              if(confirm(\"Do you really want to overwite an existing entry?\"))
-                window.location.href = 'livingstatus.php';
+              if(confirm(\"Do you really want to overwite an existing entry with: \\nWorm Type: $worm_type \\nDay: $day \\nDate: $date\"))
+                  window.location.href = 'lookup.php?act=overwrite';
             </script>";
           } else {
             echo "<script type=\"text/javascript\">
-              if (confirm(\"Are you sure you want to create a new entry?\\nWorm Type: $worm_type \\nDay: $day\")) {
+              if (confirm(\"Are you sure you want to create a new entry?\\nWorm Type: $worm_type \\nDay: $day\\nDate: $date\")) {
                   window.location.href = 'lookup.php?act=create';
               }
             </script>";
@@ -140,10 +140,11 @@
           $chem = $_SESSION['chem'];
           $day = $_SESSION['day'];
           $worm_type = $_SESSION['worm_type'];
+          $date = $_SESSION['date'];
           $platenum = $_SESSION['platenum'];
 
-          $newRow = "INSERT INTO plate(chemical, run, worm_type, day, plateID) 
-                    VALUES('$chem', '$run', '$worm_type', '$day', '$platenum')";
+          $newRow = "INSERT INTO plate(chemical, run, worm_type, day, plateID, date) 
+                    VALUES('$chem', '$run', '$worm_type', '$day', '$platenum', '$date')";
 
           if ($newRow = mysqli_query($con, $newRow)) {
             $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
@@ -158,6 +159,20 @@
             echo "Error: ".mysqli_error($con);
           }
           
+        } else if(isset($_GET['act']) && !empty($_GET['act'] == "overwrite")) {
+          $date = $_SESSION['date'];
+          $idnum = $_SESSION['idnum'];
+
+          $dateUp = "UPDATE plate SET date='$date' WHERE id='$idnum'";
+
+            if (mysqli_query($con, $dateUp)) {
+                echo "Record updated successfully";
+                echo "<script type='text/javascript'>
+                window.location.href = 'livingstatus.php';
+                </script>";
+            } else {
+                echo "Error updating record: " . mysqli_error($con);
+            }
         }
       ?>
 
