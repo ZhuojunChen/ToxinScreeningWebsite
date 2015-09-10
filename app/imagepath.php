@@ -56,11 +56,39 @@
       //need to copy from pharynx
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        //Create file name name
+        $row_id= $_SESSION['idnum'];
+        $file_name = "";
+        $sql = "SELECT * FROM plate WHERE id='$row_id'";
+
+        $result = mysqli_query($con, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+          $row = mysqli_fetch_assoc($result);
+          $file_name .= $row["chemical"];
+          $file_name .= "_";
+          
+          if($row["worm_type"] == "Full")
+            $file_name .= "f";
+          else if($row['worm_type'] == "Head")
+            $file_name .= "h";
+          else if($row['worm_type'] == "Tail")
+            $file_name .= "t";
+
+          $file_name .= "_";
+          $file_name .= "d";
+          $file_name .= $row["day"];
+          $file_name .= "_";
+          $file_name .= "r";
+          $file_name .= $row["run"];
+        }
+
         //Set up file upload
         $target_dir = "uploads/images/";
-        $target_file = $target_dir . basename($_FILES['image']['name']);
+        $file_info = pathinfo(basename($_FILES['image']['name']));
+        $file_type = $file_info['extension']; 
+        $target_file = $target_dir . $file_name . "." . $file_type;
         $uploadOK = 1;
-        $file_type = pathinfo($target_file,PATHINFO_EXTENSION);
 
         //Make sure file does not exist 
         if(file_exists($target_file)){
@@ -77,9 +105,8 @@
         //If so, upload file
         else if($uploadOK = 1) {
           if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            echo "The file ". basename($_FILES["image"]["name"]) . " has been uploaded." . "<br>";
+            echo "The file ". $file_name . " has been uploaded." . "<br>";
 
-            $row_id = $_SESSION['idnum'];
             $query = "UPDATE plate SET image='$target_file' WHERE id='$row_id'";
 
             if (mysqli_query($con, $query)) {
