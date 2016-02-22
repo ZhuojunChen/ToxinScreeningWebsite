@@ -4,6 +4,7 @@
 
 <!-- DC Table Styles I CSS -->
 <head>
+
   <link rel="stylesheet" href="styles/main.css">
     <!-- build:js scripts/vendor/modernizr.js -->
   <script src="./bower_components/modernizr/modernizr.js"></script>
@@ -27,7 +28,7 @@
 			border: solid 1px #DDEEEE;
 			color: #336B6B;
 			padding: 2px;
-			text-align: left;
+			text-align: center;
 			text-shadow: 1px 1px 1px #fff;
 		}
 		.zui-table tbody td {
@@ -43,8 +44,8 @@
 			background-color: #EEF7EE;
 		}
 		.zui-table-horizontal tbody td {
-			border-left: 1px solid #000;
-			border-right: 1 px solid #000;
+			border-left: 1px solid #DDEFEF;
+			border-right: 1px solid #DDEFEF;
 		}
 
 		label{
@@ -70,7 +71,6 @@
           </ul>
           <h3 class="text-muted">toxin_screening</h3>
         </div>
-
 <label>Planarian Database</label>
 	<table class="zui-table zui-table-zebra zui-table-horizontal">
 		<thead>
@@ -81,32 +81,44 @@
 				<th> worm type</th>
 				<th> day </th>
 				<th> pharynx </th>
-				<th> living status </th>
 				<th> phototaxis </th>
 				<th> thermotaxis</th>
 				<th> IOL </th>
 				<th> curvature </th>
 				<th> eyes </th>
-				<th> date </th>
+				<th> entry creation date </th>
+				<th> last modified </th>
+				<th> conc A </th>
+				<th> conc B </th>
+				<th> conc C </th>
+				<th> conc D </th>
+				<th> conc E </th>
+				<th> conc F </th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<form role="form" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-				<tr>
-					<td> <input type="search" name="plateID" style="width: 50px;"> </td>
-					<td> <input type="search" name="chemical"> </td>
-					<td> <input  type="search" name="run" style="width: 35px;"> </td>
-					<td> <input  type="search" name="worm_type" style="width: 60px;"> </td>
-					<td> <input  type="search" name="day" style="width: 45px;"> </td>
+				<tr align='center'>
+					<td> <input type="search" name="plateID" style="width: 50px;"></td>
+					<td> <input type="search" name="chemical"></td>
+					<td> <input type="search" name="run" style="width: 35px;"></td>
+					<td> <input type="search" name="worm_type" style="width: 60px;"></td>
+					<td> <input type="search" name="day" style="width: 45px;"></td>
 					<td> /48 </td>
-					<td> /48 </td>
 					<td></td>
 					<td></td>
 					<td></td>
-					<td>0:Straight <br> 1:Stub <br> 2:C Shape <br> 3:Corkscrew </td>
-					<td> 0s 1s 2s 3s  </td>				
-					<td></td>						
+					<td align='left'>0: Normal <br> 1: C Shape <br> 2: C Shape W/ Pharynx Extrusion <br> 3: Contracted <br> 4: Corkscrew </td>
+					<td> 0s 1s 2s 3s </td>									
+					<td>yyyy-mm-dd</td>
+					<td>yyyy-mm-dd hh:mm:ss</td>
+					<td>%</td>
+					<td>%</td>
+					<td>%</td>
+					<td>%</td>
+					<td>%</td>
+					<td>%</td>
 				</tr>
 				<input type="submit" value="Search" style="visibility: hidden;">
 			</form>
@@ -132,7 +144,7 @@
 						$sql .= " AND chemical='$chemical'";
 					}
 					else{
-						$sql .= " WHERE chemical='$chemical'";
+						$sql .= " WHERE chemical LIKE '%$chemical%'";
 					}
 				}
 
@@ -168,7 +180,7 @@
 
 			}
 
-			$sql .= " ORDER BY date DESC";
+			$sql .= " ORDER BY input_date DESC";
 
 			$result = mysqli_query($con, $sql);
 
@@ -190,7 +202,7 @@
 					$image = $row["image"];
 					$imageTrailing = basename($image);
 
-					echo "<tr>" 
+					echo "<tr align='center'>" 
 
 					. "<td>"
 					. $row["plateID"]
@@ -217,19 +229,15 @@
 					."</td>"
 
 					."<td>" 
-					. array_sum(str_split($row["living_status"]))
+					."<a href='/RECORDS/$phototaxisFile'>$phototaxisTrailing</a>"
 					."</td>"
 
 					."<td>" 
-					."<a href='$phototaxisFile'>$phototaxisTrailing</a>"
-					."</td>"
-
-					."<td>" 
-					."<a href='$thermotaxisFile'>$thermotaxisTrailing</a>"
+					."<a href='/RECORDS/$thermotaxisFile'>$thermotaxisTrailing</a>"
 					."</td>"    
 
 					."<td>" 
-					."<a href='$IOLfile'>$IOLtrailing</a>"
+					."<a href='./RECORDS/$IOLfile'>$IOLtrailing</a>"
 					."</td>" 
 
 					."<td>" 
@@ -253,18 +261,46 @@
 					."</td>"
 
 					."<td>" 
-					. $row["date"] 
-					."</td>";
+					.$row["date"] 
+					."</td>"
 
+					."<td>" 
+					.$row["input_date"] 
+					."</td>"
+
+					."<td>" 
+					.$row["concA"] 
+					."</td>"
+
+					."<td>" 
+					.$row["concB"] 
+					."</td>"
+
+					."<td>" 
+					.$row["concC"] 
+					."</td>"
+
+					."<td>" 
+					.$row["concD"] 
+					."</td>"
+
+					."<td>" 
+					.$row["concE"] 
+					."</td>"
+
+					."<td>" 
+					.$row["concF"] 
+					."</td>"
+
+					."</tr>";
 				}
 			} else {
 
-				echo "<td> 0 results </td>";
+				echo "<td> No results found </td>";
 			};
 			?>
 		</tbody>
 
 	</table>
-
 </body>
 </html>

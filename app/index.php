@@ -46,34 +46,10 @@
           </ul>
           <h3 class="text-muted">toxin_screening</h3>
         </div>
-
-        <div class="container">
-
-          <form class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-     <!--   <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div> -->
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
+        <h1>Home Page</h1>
+        Select an option at the top right
       </div>
 
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="http://www.google.com">Visualizations</a></li>
-      </form>
-      </ul>
-    </div>
-
-    <div class="footer">
-    <!--  <p>Wormz</p> -->
-  </div>
-</div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

@@ -1,7 +1,6 @@
 <?php session_start(); 
-  $platenum = "http://www.barcodesinc.com/generator/image.php?code="; 
-  $platenum .= $_SESSION['platenum']; 
-  $platenum .= "&style=68&type=C128B&width=90&height=30&xres=1&font=3";
+  $p1 = "http://www.barcodesinc.com/generator/image.php?code="; 
+  $p2 .= "&style=68&type=C128B&width=90&height=35&xres=1&font=1";
 ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
@@ -48,13 +47,10 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li><a href="./index.php">Home</a></li>
-          <li><a href="./livingstatus.php">Living Status</a></li>
-          <li><a href="./pharynx.php">Pharynx</a></li>
+          <li><a href="./manualinput.php">Manual Input</a></li>
           <li><a href="./phototaxis.php">Phototaxis</a></li>
           <li><a href="./thermotaxis.php">Thermotaxis</a></li>
           <li><a href="./IOL.php">IOL</a></li>
-          <li><a href="./curvature.php">Curvature</a></li>   
-          <li><a href="./eyes.php">Eyes</a></li>
           <li><a href="./behavior.php">Behavior</a></li>
           <li><a href="./imagepath.php">Image</a></li>
           <li class="active"><a href="./printpage.php">Print</a></li>
@@ -69,7 +65,7 @@ function makepage(src)
   // We break the closing script tag in half to prevent
   // the HTML parser from seeing it as a part of
   // the *main* page.
-
+  // top: -15% left:3%
   return "<html>\n" +
     "<style>#bar{\nposition: relative;\ntop: -15%;\nleft: 3%;\n}</style>\n" +
     "<head>\n" +
@@ -90,6 +86,38 @@ function makepage(src)
     "</html>\n";
 }
 
+function makemultpage(src)
+{
+  // We break the closing script tag in half to prevent
+  // the HTML parser from seeing it as a part of
+  // the *main* page.
+  // top: -15% left:3%
+  var code = "<html>\n" +
+    "<style>img{\ndisplay: block;\nposition: relative;\ntop: -15%;\nleft: 3%;\n}\n#bar{\npage-break-before: always;}</style>\n" +
+    "<head>\n" +
+    "<title>Temporary Printing Window</title>\n" +
+    "<script>\n" +
+    "function step1() {\n" +
+    "  setTimeout('step2()', 10);\n" +
+    "}\n" +
+    "function step2() {\n" +
+    "  window.print();\n" +
+    "  window.close();\n" +
+    "}\n" +
+    "</scr" + "ipt>\n" +
+    "</head>\n" +
+    "<body onLoad='step1()'>\n";
+  var srcs = src.split("==>");
+  for(var i = 0; i < srcs.length; i++) {
+    if(i > 0)
+      code += "<img id='bar' src='" + srcs[i] + "'/>\n"
+    else
+      code += "<img src='" + srcs[i] + "'/>\n"
+  }
+  code += "</body>\n" + "</html>\n";
+  return code;
+}
+
 function printme(evt)
 {
   if (!evt) {
@@ -108,6 +136,23 @@ function printme(evt)
   pw.document.write(makepage(src));
   pw.document.close();
 }
+
+function printAll()
+{
+  var imgs = document.getElementsByClassName("bc");
+  link = "about:blank";
+  var pw = window.open(link, "_new");
+  pw.document.open();
+  var source = "";
+  for(var i = 0; i < imgs.length; i++) {
+    if(source === "")
+      source += imgs[i].src;
+    else
+      source += '==>' + imgs[i].src;
+  }
+  pw.document.write(makemultpage(source));
+  pw.document.close();
+}
 </script>
 
 
@@ -115,9 +160,22 @@ function printme(evt)
     <p id="cred" align="right">Thanks to <a href="http://www.barcodesinc.com/generator/">http://www.barcodesinc.com/generator/</a> for the barcode generator.</p>
     <!-- File Upload and Submit Form-->
     <div class="container" align="center">
-      <img <?php echo "src='$platenum'";?> alt="Free barcode generator" border="0" id="image" onclick="printme(event)">
-      <br><?php echo "Barcode data: "." ".$_SESSION['platenum'];?><br><br>
-      <p><input type="button" class="btn btn-md btn-success" value="Print" id="printBtn" onclick="$('#image').click()">
+      <?php
+        for($x = ($_SESSION['platenum'] - $_SESSION['numCreate']*3+1); $x <= $_SESSION['platenum']; $x++) {
+          $query = "SELECT chemical, worm_type FROM plate WHERE plateid = $x";
+          $query = mysqli_query($con, $query);
+          $query = mysqli_fetch_assoc($query);
+          $y = $query['chemical'];
+          $z = $query['worm_type'];
+          $plateIDStr = sprintf("%s%0000000000000012d%s", $p1, $x, $p2);
+          $s = "<b>Chemical: </b>$y <b>Type: </b>$z <b>PlateID: </b>$x <b>Barcode: </b><img src='".$plateIDStr;
+          $s .= "' alt='Free barcode generator' border='0' id='image' class='bc' onclick='printme(event)'>";
+          //echo $plateIDStr; // display the source link that fetches the image
+          echo $s."<br>";
+        }
+      ?>
+      <br><?php echo "Barcode data: ".($_SESSION['platenum'] - $_SESSION['numCreate']*3+1)."-".$_SESSION['platenum'];?><br><br>
+      <p><input type="button" class="btn btn-md btn-success" value="Print All" id="printBtn" onclick="printAll()">
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

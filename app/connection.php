@@ -1,6 +1,6 @@
 <?php 
 
-$con = mysqli_connect("localhost","root","root","toxin_screening", "3306", "/tmp/mysql.sock");
+$con = mysqli_connect("localhost","root","root","toxin_screening", "8889", "/Applications/MAMP/tmp/mysql/mysql.sock");
 
 // Check connection
 if (mysqli_connect_errno())

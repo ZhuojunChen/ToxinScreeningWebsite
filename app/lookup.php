@@ -26,7 +26,6 @@
 		<!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
      of text file preview via modal dialog -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -40,15 +39,16 @@
         </ul>
         <h3 class="text-muted">toxin_screening</h3>
       </div>
-      <h1>Plate ID: <?php echo $_SESSION['platenum']?></h1>
+      <h1>Plate ID: <?php echo sprintf("%00000000000012d", $_SESSION['platenum'])?></h1>
 
   <label>Chemical</label><br>
+  <button id='tog'>Hide/Show Chemical Name</button>
   <div class="form-group">
-  <input type="text" class="form-control" disabled="true" value="<?php
+  <input type="text" class="form-control" id='chemN' style="display:none" disabled="true" value="<?php
         if(($_SESSION['chem']))
           echo $_SESSION['chem'];
         else 
-          echo 'No chemical indicated.';
+          echo "No chemical indicated. Please go back to the scanning page.";
   ?>">
   </div>
   <label>Run Number</label><br>
@@ -57,7 +57,7 @@
         if(($_SESSION['run']))
           echo $_SESSION['run'];
         else 
-          echo "No experiment number indicated.";
+          echo "No experiment number indicated. Please go back to the scanning page.";
   ?>">
   </div>
   <form role="form" method="post" enctype="multipart/form-data">
@@ -72,20 +72,23 @@
   </div>
   <div class="form-group">
     <label for="worm_type">Worm Type</label>
-    <select class="form-control" name = "worm_type" required>
-      <option value="">Select a type</option>
-      <option value="Full">Full</option>
-      <option value="Head">Head</option>
-      <option value="Tail">Tail</option>
-    </select>
+    <input type="text" class="form-control" disabled="true" value="<?php
+          if(($_SESSION['worm_type']))
+            echo $_SESSION['worm_type'];
+          else 
+            echo "No worm type indicated. Please go back to scanning page.";
+    ?>">
   </div>
   <div class="form-group">
-    <label for="date">Today's Date</label>
+    <label for="date">Entry Date </label> <input type="checkbox" name="upD" value='0'> overwrite existing date</input>
     <span class="error"><?php //echo $dateErr;?></span>
     <input type="date" class="form-control" name="date" value='<?php echo date('Y-m-d'); ?>' required>
   </div> 
   <div class="container" align="center">
-  	  <p><input type="submit" class="btn btn-md btn-success" name="submit">
+  	  <p><input type="submit" class="btn btn-md btn-success" id='submit' name="submit" 
+         <?php if(empty($_SESSION['platenum']) || empty($_SESSION['run']) || empty($_SESSION['worm_type']) || empty($_SESSION['chem']))
+                 echo "disabled";
+         ?>>
          <input type="button" class="btn btn-md btn-info" name="print" value="Print"
                 onclick="location.href='printpage2.php'"></p>
   </div>
@@ -94,12 +97,12 @@
   <br>
   <?php
         $platenum = $_SESSION['platenum'];
-        $query = "SELECT worm_type, day FROM plate WHERE plateID = '$platenum' ORDER BY day";
+        $query = "SELECT day FROM plate WHERE plateID = '$platenum' ORDER BY day";
         $select_id = mysqli_query($con, $query);
 
         while($row = mysqli_fetch_assoc($select_id)) {
           //traits of the row
-          $worm_type = $row['worm_type'];
+          $worm_type = $_SESSION['worm_type'];
           $day= $row['day'];
 
           echo nl2br("day: $day
@@ -107,21 +110,22 @@
         }
          
         if($_SERVER["REQUEST_METHOD"] == "POST") {
-          $worm_type = $_POST['worm_type'];
           $day = $_POST['day'];
           $date = $_POST['date'];
-          $_SESSION['worm_type'] = $worm_type;
           $_SESSION['day'] = $day;
           $_SESSION['date'] = $date;
-          $query = "SELECT id FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
+
+          $query = "SELECT id, date FROM plate WHERE day='$day' AND worm_type='$worm_type' AND plateID='$platenum'";
           $select_id = mysqli_query($con, $query);
 
           if ($row = mysqli_fetch_assoc($select_id)) { 
-            $_SESSION['day'] = $day;
             $_SESSION['idnum'] = $row['id'];
-
+            if(empty($_POST['upD'])) {
+              $date = $row['date'];
+              $_SESSION['date'] = $date;
+            }
             echo "<script type='text/javascript'>
-              if(confirm(\"Do you really want to overwite an existing entry with: \\nWorm Type: $worm_type \\nDay: $day \\nDate: $date\"))
+              if(confirm(\"Do you really want to update an existing entry with: \\nWorm Type: $worm_type \\nDay: $day \\nDate: $date\"))
                   window.location.href = 'lookup.php?act=overwrite';
             </script>";
           } else {
@@ -165,14 +169,14 @@
 
           $dateUp = "UPDATE plate SET date='$date' WHERE id='$idnum'";
 
-            if (mysqli_query($con, $dateUp)) {
-                echo "Record updated successfully";
-                echo "<script type='text/javascript'>
-                window.location.href = 'livingstatus.php';
-                </script>";
-            } else {
-                echo "Error updating record: " . mysqli_error($con);
-            }
+          if (mysqli_query($con, $dateUp)) {
+              echo "Record updated successfully";
+              echo "<script type='text/javascript'>
+              window.location.href = 'manualinput.php';
+              </script>";
+          } else {
+              echo "Error updating record: " . mysqli_error($con);
+          }
         }
       ?>
 
@@ -184,6 +188,18 @@
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+      
+      $(document).ready(function() {
+        $('input[name=upD]').on("change",function() {
+          if($(this).is(":checked"))
+            $(this).val('1');
+          else
+            $(this).val('0');
+        });
+        $('#tog').click(function() {
+          $('#chemN').toggle(400);
+        });
+      });
     </script>
 
     <!-- build:js scripts/vendor.js -->

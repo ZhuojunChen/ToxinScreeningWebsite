@@ -37,13 +37,10 @@
         <div class="header">
           <ul class="nav nav-pills pull-right">
             <li><a href="./index.php">Home</a></li>
-            <li><a href="./livingstatus.php">Living Status</a></li>
-            <li><a href="./pharynx.php">Pharynx</a></li>
+            <li><a href="./manualinput.php">Manual Input</a></li>
             <li><a href="./phototaxis.php">Phototaxis</a></li>
             <li><a href="./thermotaxis.php">Thermotaxis</a></li>
             <li class="active"><a href="./IOL.php">IOL</a></li>
-            <li><a href="./curvature.php">Curvature</a></li>   
-            <li><a href="./eyes.php">Eyes</a></li>
             <li><a href="./behavior.php">Behavior</a></li>
             <li><a href="./imagepath.php">Image</a></li>
           </ul>

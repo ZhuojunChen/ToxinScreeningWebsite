@@ -63,6 +63,9 @@
       if(!empty($_SESSION['day'])) {
         unset($_SESSION['day']);
       }
+      if(!empty($_SESSION['worm_type'])) {
+        unset($_SESSION['worm_type']);
+      }
       //need to copy from pharynx
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Transform data
@@ -78,7 +81,7 @@
         } else {
           $_SESSION['platenum'] = test_input($_POST["ID"]);
           $platenum = $_SESSION['platenum'];
-          $query = "SELECT id, chemical, run FROM plate
+          $query = "SELECT id, chemical, run, worm_type FROM plate
           WHERE plateID = '$platenum'";
 
           $select_id = mysqli_query($con, $query);
@@ -87,6 +90,8 @@
             $row = mysqli_fetch_assoc($select_id);
             $_SESSION['chem'] = $row['chemical'];
             $_SESSION['run'] = $row['run'];
+            $_SESSION['worm_type'] = $row['worm_type'];
+
             echo "<meta http-equiv='refresh' content='0;lookup.php' />";
           } else {
             // Indicate that a new plate needs to be created
