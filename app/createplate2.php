@@ -93,16 +93,16 @@
             
             $queryF = "INSERT INTO plate (chemical, run, worm_type, day, plateid, date, concA, concB, concC, concD, concE, concF) VALUES ('$chemical', '$run', 'Full', '$day', '$platenum', '$date', '$concA', '$concB', '$concC', '$concD', '$concE', '$concF')";
             $platenum++;
-            $queryH = "INSERT INTO plate (chemical, run, worm_type, day, plateid, date, concA, concB, concC, concD, concE, concF) VALUES ('$chemical', '$run', 'Head', '$day', '$platenum', '$date', '$concA', '$concB', '$concC', '$concD', '$concE', '$concF')";
-            $platenum++;
+            #$queryH = "INSERT INTO plate (chemical, run, worm_type, day, plateid, date, concA, concB, concC, concD, concE, concF) VALUES ('$chemical', '$run', 'Head', '$day', '$platenum', '$date', '$concA', '$concB', '$concC', '$concD', '$concE', '$concF')";
+            #$platenum++;
             $queryT = "INSERT INTO plate (chemical, run, worm_type, day, plateid, date, concA, concB, concC, concD, concE, concF) VALUES ('$chemical', '$run', 'Tail', '$day', '$platenum', '$date', '$concA', '$concB', '$concC', '$concD', '$concE', '$concF')";
             $platenum++;
 
             $select_id1 = mysqli_query($con, $queryF);
-            $select_id2 = mysqli_query($con, $queryH);
+            #$select_id2 = mysqli_query($con, $queryH);
             $select_id3 = mysqli_query($con, $queryT);
           
-            if (!$select_id1 || !$select_id2 || !$select_id3) {
+            if (!$select_id1 || !$select_id3) {
                 $success = False;
                 echo "Error inserting plate: " . mysqli_error($con);
                 break;
@@ -140,7 +140,7 @@
       </div>
       <h1>
       Plate ID<?php
-        $range = $platenum - 1 + (($_POST['numCreate'])*3);
+        $range = $platenum - 1 + (($_POST['numCreate'])*2);
         if($_POST['numCreate'] < 1)
           echo ": ".$platenum;
         else
@@ -165,13 +165,13 @@
               </label>
               <label class='radio-inline' id='rad'>
                 <input type='radio' name='run_chem".$x."' value='3'>Run 3
-              </label></label><br><tab><label>Concentrations for chemical ".$x." (from run 1, low -> high, in micromolar)</label>";
-        $str .= "<input class='chemIn' type='number' min='0' value = '0' class='form-control' name='conc_chem".$x."concA' placeholder='Enter in micromolar for row A' required>";
-        $str .= "<input class='chemIn' type='number' min='0' value = '10' class='form-control' name='conc_chem".$x."concB' placeholder='Enter in micromolar for row B' required>";
-        $str .= "<input class='chemIn' type='number' min='0' value = '100' class='form-control' name='conc_chem".$x."concC' placeholder='Enter in micromolar for row C' required>";
-        $str .= "<input class='chemIn' type='number' min='0' value = '1000' class='form-control' name='conc_chem".$x."concD' placeholder='Enter in micromolar for row D' required>";
-        $str .= "<input class='chemIn' type='number' min='0' value = '10000' class='form-control' name='conc_chem".$x."concE' placeholder='Enter in micromolar for row E' required>";
-        $str .= "<input class='chemIn' type='number' min='0' value = '100000' class='form-control' name='conc_chem".$x."concF' placeholder='Enter in micromolar for row F' required>";
+              </label></label><br><tab><label>Concentrations for chemical ".$x." (from run 1, low -> high, in nanomolar)</label>";
+        $str .= "<input class='chemIn' type='number' min='0' value = '0' class='form-control' name='conc_chem".$x."concA' placeholder='Enter in nanomolar for row A' required>";
+        $str .= "<input class='chemIn' type='number' min='0' value = '10' class='form-control' name='conc_chem".$x."concB' placeholder='Enter in nanomolar for row B' required>";
+        $str .= "<input class='chemIn' type='number' min='0' value = '100' class='form-control' name='conc_chem".$x."concC' placeholder='Enter in nanomolar for row C' required>";
+        $str .= "<input class='chemIn' type='number' min='0' value = '1000' class='form-control' name='conc_chem".$x."concD' placeholder='Enter in nanomolar for row D' required>";
+        $str .= "<input class='chemIn' type='number' min='0' value = '10000' class='form-control' name='conc_chem".$x."concE' placeholder='Enter in nanomolar for row E' required>";
+        $str .= "<input class='chemIn' type='number' min='0' value = '100000' class='form-control' name='conc_chem".$x."concF' placeholder='Enter in nanomolar for row F' required>";
 
         echo $str;
        }

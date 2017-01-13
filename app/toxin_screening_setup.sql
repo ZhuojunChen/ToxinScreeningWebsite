@@ -1,3 +1,4 @@
+
 # ************************************************************
 # Sequel Pro SQL dump
 # Version 4499
@@ -42,11 +43,11 @@ CREATE TABLE `plate` (
   `image` varchar(50) DEFAULT NULL,
   `plateID` bigint(12) unsigned zerofill NOT NULL DEFAULT '000000000001',
   `input_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `concA` int(11) DEFAULT NULL,
-  `concB` int(11) DEFAULT NULL,
-  `concC` int(11) DEFAULT NULL,
-  `concD` int(11) DEFAULT NULL,
-  `concE` int(11) DEFAULT NULL,
-  `concF` int(11) DEFAULT NULL,
+  `concA` decimal(12,4) DEFAULT NULL,
+  `concB` decimal(12,4) DEFAULT NULL,
+  `concC` decimal(12,4) DEFAULT NULL,
+  `concD` decimal(12,4) DEFAULT NULL,
+  `concE` decimal(12,4) DEFAULT NULL,
+  `concF` decimal(12,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,6 +1,8 @@
 <?php session_start(); 
-  $p1 = "http://www.barcodesinc.com/generator/image.php?code="; 
-  $p2 .= "&style=68&type=C128B&width=90&height=35&xres=1&font=1";
+  $p1 = "http://www.barcodesinc.com/generator/image.php?code=";
+  $p2 = ""; 
+  $p2 .= //"&style=68&type=C128B&width=90&height=35&xres=1&font=1";
+"&style=68&type=C128B&width=206&height=35&xres=1&font=1";
 ?>
 <!doctype html>
 <?php require 'connection.php'; ?>
@@ -93,7 +95,7 @@ function makemultpage(src)
   // the *main* page.
   // top: -15% left:3%
   var code = "<html>\n" +
-    "<style>img{\ndisplay: block;\nposition: relative;\ntop: -15%;\nleft: 3%;\n}\n#bar{\npage-break-before: always;}</style>\n" +
+    "<style>img{\ndisplay: block;\nposition: relative;\nleft: -3%;\n}\n#bar{\npage-break-before: always;\ntop: 85%;\n}\n#first{\ntop: 25%;}</style>\n" +
     "<head>\n" +
     "<title>Temporary Printing Window</title>\n" +
     "<script>\n" +
@@ -112,7 +114,7 @@ function makemultpage(src)
     if(i > 0)
       code += "<img id='bar' src='" + srcs[i] + "'/>\n"
     else
-      code += "<img src='" + srcs[i] + "'/>\n"
+      code += "<img id='first' src='" + srcs[i] + "'/>\n"
   }
   code += "</body>\n" + "</html>\n";
   return code;
@@ -161,20 +163,21 @@ function printAll()
     <!-- File Upload and Submit Form-->
     <div class="container" align="center">
       <?php
-        for($x = ($_SESSION['platenum'] - $_SESSION['numCreate']*3+1); $x <= $_SESSION['platenum']; $x++) {
+        for($x = ($_SESSION['platenum'] - $_SESSION['numCreate']*2+1); $x <= $_SESSION['platenum']; $x++) {
           $query = "SELECT chemical, worm_type FROM plate WHERE plateid = $x";
           $query = mysqli_query($con, $query);
           $query = mysqli_fetch_assoc($query);
           $y = $query['chemical'];
           $z = $query['worm_type'];
-          $plateIDStr = sprintf("%s%0000000000000012d%s", $p1, $x, $p2);
+          //$plateIDStr = sprintf("%s%0000000000000012d%s", $p1, $x, $p2);
+	  $plateIDStr = sprintf("%s%000000000000008d%s", $p1, $x, $p2);
           $s = "<b>Chemical: </b>$y <b>Type: </b>$z <b>PlateID: </b>$x <b>Barcode: </b><img src='".$plateIDStr;
           $s .= "' alt='Free barcode generator' border='0' id='image' class='bc' onclick='printme(event)'>";
           //echo $plateIDStr; // display the source link that fetches the image
           echo $s."<br>";
         }
       ?>
-      <br><?php echo "Barcode data: ".($_SESSION['platenum'] - $_SESSION['numCreate']*3+1)."-".$_SESSION['platenum'];?><br><br>
+      <br><?php echo "Barcode data: ".($_SESSION['platenum'] - $_SESSION['numCreate']*2+1)."-".$_SESSION['platenum'];?><br><br>
       <p><input type="button" class="btn btn-md btn-success" value="Print All" id="printBtn" onclick="printAll()">
     </div>
 
