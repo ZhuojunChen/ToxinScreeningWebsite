@@ -63,40 +63,47 @@
 </head>
 
 <body>
-        <div class="header">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="./index.php">Home</a></li>
-            <li class="active"><a href="./dbsearch.php">Data Search</a></li>
-            <li><a href="./scanID.php">Plate Entry</a></li>
-          </ul>
-          <h3 class="text-muted">toxin_screening</h3>
-        </div>
-<label>Planarian Database</label>
-	<table class="zui-table zui-table-zebra zui-table-horizontal">
-		<thead>
-			<tr> 
-				<th> plate id </th>
-				<th> chemical </th>
-				<th> run </th>
-				<th> worm type</th>
-				<th> day </th>
-				<th> pharynx </th>
-				<th> phototaxis </th>
-				<th> thermotaxis</th>
-				<th> IOL </th>
-				<th> curvature </th>
-				<th> eyes </th>
-				<th> entry creation date </th>
-				<th> last modified </th>
-				<th> conc A </th>
-				<th> conc B </th>
-				<th> conc C </th>
-				<th> conc D </th>
-				<th> conc E </th>
-				<th> conc F </th>
-			</tr>
-		</thead>
 
+	<!-- the Navigation Bar -->
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a href="./index.php">Home</a></li>
+        <li class="active"><a href="./dbsearch.php">Data Search</a></li>
+        <li><a href="./scanID.php">Plate Entry</a></li>
+    </ul>
+    <h3 class="text-muted">toxin_screening</h3>
+  </div>
+
+
+  <!-- Data Search -->
+	<label>Planarian Database</label>
+		<!-- the title in the data search table -->
+		<table class="zui-table zui-table-zebra zui-table-horizontal">
+			<thead>
+				<tr> 
+					<th> plate id </th>
+					<th> chemical </th>
+					<th> run </th>
+					<th> worm type</th>
+					<th> day </th>
+					<th> pharynx </th>
+					<th> phototaxis </th>
+					<th> thermotaxis</th>
+					<th> IOL </th>
+					<th> curvature </th>
+					<th> eyes </th>
+					<th> entry creation date </th>
+					<th> last modified </th>
+					<th> conc A </th>
+					<th> conc B </th>
+					<th> conc C </th>
+					<th> conc D </th>
+					<th> conc E </th>
+					<th> conc F </th>
+				</tr>
+			</thead>
+
+	  <!-- Set up the first row in the Data search Table -->
 		<tbody>
 			<form role="form" method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<tr align='center'>
@@ -106,9 +113,10 @@
 					<td> <input type="search" name="worm_type" style="width: 60px;"></td>
 					<td> <input type="search" name="day" style="width: 45px;"></td>
 					<td> /48 </td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<!-- TODO: TEST-->
+					<td> <a href="<?php echo "http://www.google.com"; ?>"> link </a></td>
+					<td> <a href="<?php echo "http://www.google.com"; ?>"> link </a></td>
+					<td> <a href="<?php echo "http://www.google.com"; ?>"> link </a></td>
 					<td align='left'>0: Normal <br> 1: C Shape <br> 2: C Shape W/ Pharynx Extrusion <br> 3: Contracted <br> 4: Corkscrew </td>
 					<td> 0s 1s 2s 3s </td>									
 					<td>yyyy-mm-dd</td>
@@ -178,6 +186,16 @@
 					}
 				}
 
+				if(isset($_GET['day']) && !empty($_GET['day'])){
+					$day = $_GET['day'];
+					if (strpos($sql,'WHERE') !== false) {
+						$sql .= " AND day='$day'";
+					}
+					else{
+						$sql .= " WHERE day='$day'";
+					}
+				}
+
 			}
 
 			$sql .= " ORDER BY input_date DESC";
@@ -227,17 +245,20 @@
 					."<td>" 
 					. array_sum(str_split($row["pharynx"]))
 					."</td>"
-
+					. $row["phototaxisFile"] 
 					."<td>" 
-					."<a href='/RECORDS/$phototaxisFile'>$phototaxisTrailing</a>"
+
+					//."<a href='/RECORDS/$phototaxisFile'>$phototaxisTrailing</a>"
+					."<a href='http://www.google.com'> phototaxisFile </a>"
 					."</td>"
 
 					."<td>" 
-					."<a href='/RECORDS/$thermotaxisFile'>$thermotaxisTrailing</a>"
+					."<a href='http://www.google.com'> thermotaxis </a>"
+					//."<a href='/RECORDS/$thermotaxisFile'>$thermotaxisTrailing</a>"
 					."</td>"    
 
 					."<td>" 
-					."<a href='./RECORDS/$IOLfile'>$IOLtrailing</a>"
+					."<a href='./RECORDS/$IOLfile'>$IOL</a>"
 					."</td>" 
 
 					."<td>" 
